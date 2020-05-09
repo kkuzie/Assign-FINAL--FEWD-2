@@ -12,7 +12,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/karen/styles.css">
+    <link rel="stylesheet" href="/pizzaapp/styles.css">
 
     <title>Pizza App Final</title>
 </head>
@@ -22,17 +22,18 @@
         <!-- LANDING PAGE -->
 
         <div class="landing-page">
-            <img id='pepperoni' src="/karen/images/pepperoni-transparent-3.png" alt="pepperoni">
             <div id="pizza-home"></div>
+            <img id='pepperoni' src="/pizzaapp/images/pepperoni-transparent-3.png" alt="pepperoni">
             <h1>Peppe & Roni Pizza</h1>
-            <p>Giuseppe and Veronica Marini started making pizza on there first date, when they fell in love. They want to do the same for you.
-                
+            <p>Giuseppe and Veronica Marini started making pizza on there first date, when they fell in love. They want
+                to do the same for you.
+
             </p>
             <div id="logo-images">
-                <div id="bwpizza"><img src="/karen/images/Image by Jonathan Walker from Pixabay.png"
-                        alt="logo"></div>
+                <div id="bwpizza"><img src="/pizzaapp/images/Image by Jonathan Walker from Pixabay.png" alt="logo">
+                </div>
 
-                <div id="prlove"><img src="/karen/images/peppe roni.png" alt="logo"></div>
+                <div id="prlove"><img src="/pizzaapp/images/peppe roni.png" alt="logo"></div>
             </div>
 
             <div class="landing-btns">
@@ -57,67 +58,88 @@
     <div type="btn" class="box btn btn-primary" id="pickup-btn">find us</div> -->
 
         <!-- ORDER PAGE -->
-        
+
         <div class="order-page">
             <div class="circle"></div>
             <div class="orderall">
                 <div class="crust-choice">
-            <!-- <div class="saycheese"> -->
-                <!-- <h2>Say cheese!</h2> -->
-                <h2>Crusts</h2>
-                <div class="custom-control custom-radio" id='hand1st'>
-                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadio1">
-                        <h3>By the hand...</h3>
-                        <!-- Nah, not feeling it -->
-                    </label>
+                    <!-- <div class="saycheese"> -->
+                    <!-- <h2>Say cheese!</h2> -->
+                    <h2>Crusts</h2>
 
-                    <select class="custom-select hand">
-                        <option selected>Tossed by hand - Select size</option>
-                        <option value="1">Little Sis 12" $9.99</option>
-                        <option value="2">Middle Child 14" $12.99</option>
-                        <option value="3">Big Brother 16" $14.99</option>
-                    </select>
-                </div><!--closer for hand1st-->
+                    <!-- 1.    STEP 1: DONE
+            Add a radio button group that includes the 4 dough options listed here:a.Hand Tossed b.    Thin Crust c.New York Styled.    Gluten Free         -->
 
-                <div class="custom-control custom-radio" id="skinny1st">
-                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadio2">
-                        <h3>Skinny dippin</h3>
-                        <!-- Yup, cheese it up! -->
-                    </label>
+                    <!-- STEP 2: 
+            Depending on which dough option the user selects, a drop down menu that contains the size and cost of the pizza will be programmatically populated based on the options below:a.If Hand Tossed Selected: Small ($9.99), Medium ($12.99), Large ($14.99) b.    If Thin Crust Selected: Medium ($11.99), Large ($13.99)c.If New York Style Selected: Large ($16.99), Extra Large ($19.99) -->
+                    <!-- d.    If Gluten Free Selected: Small ($10.99)
 
-                    <select class="custom-select skinny">
-                        <option selected>Cracker thin and crunchy - Select Size</option>
-                        <option value="1">Middle Child 12" $11.99</option>
-                        <option value="2">Big Brother 14" $13.99</option>
-                    </select>
-    
+                **NOT REQD because skipped lesson on objects***
+                I want you to work with objects using literal notation in this step. Specifically the pizza sizes/prices should be stored in an object and then bound to the drop down list programmatically but only when the user selects a dough option first. Although the entire form (in this part) can be built this way, I want you to only focus on this technique for this step. -->
 
-                 </div>
-                 <div class="custom-control custom-radio" id="ny1st">
-                    <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadio3">
-                        <h3>i <span style="font-size:150%;color:red;">&hearts;</span> NY</h3>
-                    </label>
+                    <!-- RADIO BUTTONS & DROPDOWNS for crust -->
+                    <div class="custom-control custom-radio" id='hand1st'>
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label hand1st" for="customRadio1">
+                            <h3>By the hand...</h3>
+                            <!-- Nah, not feeling it -->
+                        </label>
 
-                    <select class="custom-select ny">
-                        <option selected>New Yorker Style - Select Size</option>
-                        <option value="1">Big Boss 18" $16.99</option>
-                        <option value="2">Godfather 20" $19.99</option>
-                    </select>
-    
-                 </div>
-                 <div class="custom-control custom-radio" id="gluten1st">
-                    <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadio4">
-                        Glutenless for punishment
-                    </label>
-                 </div>
-            </div><!--closer for saycheese/crusts-->
-            <br>
+                        <select class="custom-select hand">
+                            <option selected>Tossed by hand - Select size</option>
+                            <option value="1">Little Sis 12" $9.99</option>
+                            <option value="2">Middle Child 14" $12.99</option>
+                            <option value="3">Big Brother 16" $14.99</option>
+                        </select>
+                    </div>
+                    <!--closer for hand1st-->
 
-            <div class="crust">
+                    <div class="custom-control custom-radio" id="skinny1st">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio2">
+                            <h3>Skinny dippin</h3>
+                            <!-- Yup, cheese it up! -->
+                        </label>
+
+                        <select class="custom-select skinny">
+                            <option selected>Cracker thin and crunchy - Select Size</option>
+                            <option value="1">Middle Child 12" $11.99</option>
+                            <option value="2">Big Brother 14" $13.99</option>
+                        </select>
+
+
+                    </div>
+                    <div class="custom-control custom-radio" id="ny1st">
+                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio3">
+                            <h3>i <span style="font-size:120%;color:red;">&hearts;</span> NY</h3>
+                        </label>
+
+                        <select class="custom-select ny">
+                            <option selected>New Yorker Style - Select Size</option>
+                            <option value="1">Big Boss 18" $16.99</option>
+                            <option value="2">Godfather 20" $19.99</option>
+                        </select>
+
+                    </div>
+                    <div class="custom-control custom-radio" id="gluten1st">
+                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio4">
+                            <h3>Glutenless for punishment</h3>
+                        </label>
+
+                        <select class="custom-select gluten">
+                            <option selected>Only one size option</option>
+                            <option value="1">Little Sis 12" $10.99</option>
+                        </select>
+                    </div>
+
+                </div>
+                <!-- </div>closer for saycheese/crusts -->
+                <br><br>
+
+                <!-- <div class="crust"> -->
+
                 <!-- <h2>Crusts</h2> -->
                 <!-- <h3>By the hand</h3>
                 <select class="custom-select hand">
@@ -141,135 +163,283 @@
                     <option value="2">Godfather 20" $19.99</option>
                 </select> -->
 
-                <h3>Glutenless for punishment</h3>
+                <!-- <h3>Glutenless for punishment</h3>
                 <select class="custom-select gluten">
                     <option selected>Only one size option</option>
                     <option value="1">Little Sis 12" $10.99</option>
                 </select>
-            </div>
-            <br>
+            </div> -->
 
-            <div class="saycheese">
-            <!-- <div class="ezcheesy"> -->
-                <!-- <h2>Easy Cheesy</h2> -->
-                <h2>Say Cheese!</h2>
-                <select class="custom-select">
-                    <option selected>The usual - no charge</option>
-                    <option value="1">Easy cheesy - no charge</option>
-                    <option value="2">A little more +$2.99</option>
-                    <option value="3">Make it a double +$3.99</option>
-                </select>
-            </div><!--closer for saycheese/ezcheesy-->
+                <!-- STEP 3: 
+            Add a drop down list for cheese options. Populate the list items with these options:a.Light: no chargeb.    Normal (default): no chargec.Extra: +$2.99d.    Double: +$3.99 -->
+                <div class="saycheese">
+                    <!-- <div class="ezcheesy"> -->
+                    <!-- <h2>Easy Cheesy</h2> -->
+                    <h2>Say Cheese!</h2>
+                    <select class="custom-select">
+                        <option selected>The usual - no charge</option>
+                        <option value="1">Easy cheesy - no charge</option>
+                        <option value="2">A little more +$2.99</option>
+                        <option value="3">Make it a double +$3.99</option>
+                    </select>
+                </div>
+                <!--closer for saycheese/ezcheesy-->
+                <br><br>
 
-            <div class="top">
-                <h2>Over the top</h2>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">Peppe Roni</label>
-                </div>
+                <!-- STEP 4: 
+            Add a drop down list for sauce options. Populate the list items with these options:a.Regular Tomato: no chargeb.    Hearty Tomato: +$.99c.BBQ Sauce: +$1.99 -->
 
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                    <label class="custom-control-label" for="customCheck2">sausage</label>
+                <div class="saucy">
+                    <h2>Saucy!</h2>
+                    <select class="custom-select">
+                        <option selected>Tomato - no charge</option>
+                        <option value="1">Big tomato +$.99</option>
+                        <option value="2">BBQ +$1.99</option>
+                    </select>
                 </div>
+                <!--closer for saucy-->
+                <br><br>
+                <!-- STEP 5: 
+                Next add a checkbox group of options for toppings. Each topping is $.99 extra. You offer the following toppings: pepperoni, sausage, ham, bacon, salami, peppers, olives, jalapenos, mushrooms, pineapple, and onion. Use a checkbox list here so the user can select more than one option. -->
 
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck3">
-                    <label class="custom-control-label" for="customCheck3">ham</label>
-                </div>
+                <div class="top">
+                    <h2>Over the top</h2>
+                    <h4>only $.99 each</h4>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Peppe Roni</label>
+                    </div>
 
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck4">
-                    <label class="custom-control-label" for="customCheck4">bacon</label>
-                </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                        <label class="custom-control-label" for="customCheck2">sausage</label>
+                    </div>
 
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck5">
-                    <label class="custom-control-label" for="customCheck5">salami</label>
-                </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        <label class="custom-control-label" for="customCheck3">ham</label>
+                    </div>
 
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck6">
-                    <label class="custom-control-label" for="customCheck6">peppers</label>
-                </div>
-                    
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck7">
-                    <label class="custom-control-label" for="customCheck7">olives</label>
-                </div>
-                
-                <div class="custom-control custom-checkbox">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck4">
+                        <label class="custom-control-label" for="customCheck4">bacon</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck5">
+                        <label class="custom-control-label" for="customCheck5">salami</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck6">
+                        <label class="custom-control-label" for="customCheck6">peppers</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck7">
+                        <label class="custom-control-label" for="customCheck7">olives</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="customCheck8">
-                    <label class="custom-control-label" for="customCheck8">jalapenos</label>
-                </div>
+                        <label class="custom-control-label" for="customCheck8">jalapenos</label>
+                    </div>
 
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck9">
-                    <label class="custom-control-label" for="customCheck9">shrooms</label>
-                </div>
-                    
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck10">
-                    <label class="custom-control-label" for="customCheck10">pineapple</label>
-                </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck9">
+                        <label class="custom-control-label" for="customCheck9">shrooms</label>
+                    </div>
 
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck11">
-                    <label class="custom-control-label" for="customCheck11">onions</label>
-                </div>
-                </><!-- closing for custom-control custom-checkbox -->
-            </div><!-- closing for top -->
-        </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck10">
+                        <label class="custom-control-label" for="customCheck10">pineapple</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck11">
+                        <label class="custom-control-label" for="customCheck11">onions</label>
+                    </div>
+                    </br><!-- closing for custom-control custom-checkbox -->
+                </div><!-- closing for top -->
+
+                <button type="btn" class="box" id="orderit-btn">Order it!</button>
+            </div><!-- closing div for orderall -->
         </div><!-- closing div for order-page -->
 
-        <!-- CHECKOUT -->
-        <form>
-            <div class="form-row">
-                <div class="form-group col-md-6">
+
+        <!-- GOTTA FIND YA - delivery address -->
+        <div class="getmypizza">
+            <div class="circle2"></div>
+            <div class="payup-circle">
+                <form id='gottafindya'>
+                    <h3>Gotta find ya!</h3>
+                    <!-- <div class="form-row"> -->
+                    <!--1st form-row-->
+                    <!-- <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
                     <input type="email" class="form-control" id="inputEmail4">
                 </div>
+
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Password</label>
                     <input type="password" class="form-control" id="inputPassword4">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-                <label for="inputAddress2">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="form-row">
+            </div> -->
+                    <!--closer 1st form-row-->
+
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputAddress2">Address 2</label>
+                        <input type="text" class="form-control" id="inputAddress2"
+                            placeholder="Apartment, studio, or floor">
+                    </div>
+
+                    <div class="form-row">
+                        <!--2nd form-row-->
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                    </div>
+                    <!--closer for 2nd form-row-->
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Street creds same as where we find ya?
+                                <h6>(billing same as delivery address?)</h6>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- <button type="submit" class="btn btn-primary">Pay up!</button> -->
+
+                </form>
+                <!--closer for #gottafindya-->
+                <br><br>
+
+                <!--STREET CREDS - billing info-->
+
+                <form id='streetcreds'>
+                    <h3>STREET CREDS</h3>
+                    <!-- <div class="form-row"> -->
+                    <!--1st form-row-->
+                    <!-- <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+
                 <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <label for="inputPassword4">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4">
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-            </div>
-            <div class="form-group">
+            </div> -->
+                    <!--closer 1st form-row-->
+
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputAddress2">Address 2</label>
+                        <input type="text" class="form-control" id="inputAddress2"
+                            placeholder="Apartment, studio, or floor">
+                    </div>
+
+                    <div class="form-row">
+                        <!--2nd form-row-->
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                    </div>
+                    <!--closer for 2nd form-row-->
+
+                    <!-- <div class="form-group">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
-                        Check me out
+                        Billing address same as street creds?
                     </label>
                 </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
+            </div>-->
+                </form>
+                <!--closer for #streetcreds-->
+                <br><br>
 
+                <form action="" class="paythepiper">
+                    <h3>Pay the piper</h3>
+                    <label for="ccn">Credit Card Number:</label><input type="text" id="ccn" class="form-control"><br>
+
+                    <label for="cvc">CVC (security code on back)</label><input type="text" id="cvc"
+                        class="form-control"><br>
+
+                    <label>Expires:</label>
+                    <select class="form-control" id="ex-month">
+                        <option value="jan">January</option>
+                        <option value="feb">February</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="jun">June</option>
+                        <option value="jul">July</option>
+                        <option value="aug">August</option>
+                        <option value="sept">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select><br>
+                    <select class="form-control" id="ex-year">
+                        <option value="2020">2020</option>
+                        <option value="2015">2021</option>
+                        <option value="2016">2022</option>
+                        <option value="2017">2023</option>
+                        <option value="2018">2024</option>
+                        <option value="2019">2025</option>
+                        <option value="2015">2026</option>
+                    </select><br>
+
+                    <div class="payup-btns">
+                    <button type="submit" class="btn btn-primary" id='payup-btn'>Pay up!</button>
+                    <!-- <button type="btn" class="box" id="order-btn">Order up</button> -->
+                    <button type="text" class="btn btn-primary" id='payup-btn2'>TOTAL</button>
+                    </div>
+
+                </form><!-- closer for .paythepiper -->
+            </div><!-- closer for .payup-circle -->
+        </div><!-- closer for .getmypizza -->
     </main>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -283,7 +453,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 
-    <script src="/karen/js/scripts.js"></script>
+    <script src="/pizzaapp/js/scripts.js"></script>
 </body>
 
 </html>
