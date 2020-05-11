@@ -27,6 +27,13 @@ main {
     border-radius: 50%;
     /* position: absolute; */
 }
+#logo {
+    width: 300px;
+    height: auto;
+    float: right;
+    margin-right: 50px;
+    margin-top: -325px;
+}
 /* .landing-btns {
     position: absolute;
 } */
@@ -39,10 +46,9 @@ main {
     top: -450px;
     left: -80px;
     clip-path: inset(0px 0 0px 360px);
-
     /* overflow: hidden; */
-
 }
+
 h1 {
     font-size: 5em;
     text-align: center;
@@ -78,7 +84,7 @@ p {
     left: 120px;
     top: 10px;
 }
-#craving-btn, #order-btn, #findus-btn, #orderit-btn
+#craving-btn, #order-btn, #findus-btn, #orderit-btn, #payup-btn
 /* , .dot, .dot2, .dot3, .dot4  */
 {
     background-color: midnightblue;
@@ -109,6 +115,9 @@ p {
 .order-page, .getmypizza {
     width: 500px;
     margin: 0 auto;
+}
+.orderall {
+    padding-top: 100px;
 }
 .orderall, .payup-circle {
     position: relative;
@@ -154,23 +163,32 @@ p {
     top: -300px;
     left: 400px;
 }
-/* #craving-btn { */
-
+#craving-btn {
+    grid-row: 3 / 4;
     /* top: -275px;
     left:300px; */
-/* }
-#order-btn { */
+}
+#order-btn {
+    grid-row: 3 / 4;
+
     /* top: -150px;
     left: 400px; */
-/* }
-#findus-btn { */
+}
+#order-btn:hover {
+    /* background: url('images/pepperoni-transparent-3.png') no-repeat; */
+    background-color: midnightblue;
+    opacity: .8;
+}
+#findus-btn {
+    grid-row: 3 / 4;
+
     /* top:0px;
     left: -275px; */
-/* } */
+}
 
 /*STREET CREDS*/
 
-#payup-btn, #payup-btn2 {
+#payup-btn2 {
     background-color: midnightblue;
     width: 100px;
     height: 100px;
@@ -186,6 +204,9 @@ p {
     grid-gap: 20px;
     width: 100%;
     margin: 0 auto;
+}
+select {
+    font-family: 'Delius Unicase', cursive;
 }
 
 
