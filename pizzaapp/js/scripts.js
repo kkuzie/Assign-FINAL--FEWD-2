@@ -1,11 +1,11 @@
 $(document).ready(function(e){
 
 //LANDING PAGE
-    $('.order-page').hide();
+    $('.order-page').hide();//TEMP SHOWING
     // $('#streetcreds').hide();
     // $('#gottafindya').hide();
     // $('.paythepiper').hide();
-    $('.getmypizza').hide();
+    $('.getmypizza').hide();//TEMP SHOWING
 
 
 $("#order-btn").click(function() {
@@ -21,8 +21,9 @@ $("#orderit-btn").click(function() {
     $(".landing-page").hide();    
     // $('#streetcreds').show();
     // $('#gottafindya').show();
-    // $('.paythepiper').show();
     $('.getmypizza').show();
+    $('.paythepiper').hide();
+
 
   });
 });
@@ -44,9 +45,6 @@ $("#orderit-btn").click(function() {
   $('.ny').hide();
   $('.gluten').hide();
 
-  // $('.saycheese').hide();
-  // $('.top').hide();
-  // $('.saucy').hide();
 
 $("#hand1st").click(function() {
   $(".hand").show();
@@ -76,8 +74,135 @@ $("#gluten1st").click(function() {
   $('.gluten').show();
   });
   
+  $('.saycheese').hide();
+  $('.top').hide();
+  $('.saucy').hide();
+  // $('#orderit-btn').hide();
+
+//ADDRESS SECTION
+$('#other').hide();//TEMP SHOW
+$('#other2').hide();//TEMP SHOW
+
+
+
+let dwelling = document.querySelector('#dwelling');
+console.log(dwelling);
+
+// let other = document.querySelector('#other');
+// console.log(other);
+
+$('#dwelling').change (function(){
+  if (dwelling.value == 'Other...'){
+    $('#other').show();
+  }else {
+    $('#other').hide();
+  }
+});
+console.log(dwelling.value);
+
+let dwelling2 = document.querySelector('#dwelling2');
+console.log(dwelling2);//grabs select#dwelling2 tag
+
+// let other2 = document.querySelector('#other2');
+// console.log(other2);
+
+$('#dwelling2').change (function(){
+  if (dwelling2.value == 'Other...'){
+    $('#other2').show();
+  }else {
+    $('#other2').hide();
+  }
+});
+
+//GOTTAFINDYA & STREETCREDS FORM VALIDATION
+
+//GOTTAFINDYA
+//gets the input tag for each label of form - name, address, etc):
+let name = document.getElementById('whosbuying');
+// let address = document.getElementById('address');
+// let apt = document.getElementById('apt-ste-num');
+// let dwellingInput = document.getElementById('dwellinginput');
+let city = document.getElementById('city');
+let state = document.getElementById('state');
+let zip = document.getElementById('zip');
+let email = document.getElementById('email');
+let fone = document.getElementById('fone');
+
+//STREET CREDS
+let name2 = document.getElementById('whosbuying2');
+// let address2 = document.getElementById('address2');
+// let apt2 = document.getElementById('apt-ste-num2');
+// let dwellingInput2 = document.getElementById('dwellinginput2');
+let city2 = document.getElementById('city2');
+let state2 = document.getElementById('state2');
+let zip2 = document.getElementById('zip2');
+let email2 = document.getElementById('email2');
+let fone2 = document.getElementById('fone2');
+
+//SUBMIT BUTTON for gottafindya and streetcreds
+let payup = document.getElementById('payup-btn');
+
+function checkName(){
+  let regexVal = {
+    name: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,}+ [a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,}+$/,
+    city:/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,}+$/,
+    state: /^(?:(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]))$/,
+    zip: /^\d{5}$|^\d{5}-\d{4}$/, 
+    phone: /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/,
+    email: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+
+  //SCANNERS
+  let nameScanner = nameRegCheck.test(name.value);
+  // let emailScanner = emailRegCheck.test(email.value);
+
+
+
+
+}//closer for function checkName
+
+
+
+
+
+
+
 
 });//closing document ready
+
+
+//***FIRST TRY NAME VALIDATION START
+//WHOS BUYING FORM INPUT
+// let gottafindyaInput = document.forms.gottafindyaInput;
+// //this grabs the forms tag just like getElementsByClassName, etc
+// console.log(gottafindyaInput);//undefined
+
+// let whosbuying = document.querySelector('#whosbuying');//grabs input type for name label
+// console.log(whosbuying);//grabs input#whosbuying tag
+// console.log(whosbuying.value);//grabs actual input of input#whosbuying 
+// // let textOnly = /^[\sa-zA-Z]+$/;
+
+// //NAME VALIDATION
+// function checkName() {
+// 	// var userName = this.value;
+// 	let textOnly = /^[\sa-zA-Z]+$/;
+// 	if (whosbuying.length === 0) {
+//     nameError.innerHTML = '<p class = "text-danger">* This field is required. Please enter your name.</p>';
+//     console.log(nameError);
+//     gottafindya.name.focus();
+//     console.log(gottafindya); 
+// 	} else if (whosbuying.match(textOnly)) {
+// 		gottafindya.addresstype.focus();
+// 		nameError.innerHTML = '';
+// 	} //closer for elseif
+// else {
+// 		nameError.innerHTML = '<p class = "text-danger">* Name invalid. Please use only letters and spaces for your name</p>';
+// 		gottafindya.name.focus();
+// 	}//closer for function checkName
+// }//closer for if stmt
+// checkName();
+//FIRST TRY NAME VALIDATION END*** 
+
 
 //   $("#pickup-btn").click(function() {
 //     $("#order-content").show();
