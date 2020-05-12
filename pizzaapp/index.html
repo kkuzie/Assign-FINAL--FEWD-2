@@ -284,7 +284,8 @@
                         <!--1st form-row-->
                         <div class="form-group col-md-12">
                             <label for="name">Name</label>
-                            <input type="name" class="form-control" id="whosbuying" placeholder="Who's buying?">
+                            <input type="text" 
+                            name='name' class="form-control" id="whosbuying" placeholder="Who's buying?">
                             <div id="nameError"></div>
                             <!--empty div for name reqd message-->
                         </div>
@@ -305,7 +306,7 @@
                     <!-- ??? WHY ISNT THIS IN A ROW DIV ??? -->
                     <div class="form-group">
                         <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="address"
+                        <input type="text" name="address" class="form-control notincl" id="address"
                             placeholder="6789 End of the Road Road">
                     </div>
 
@@ -320,12 +321,13 @@
 
                         <div class="form-group col-md-6">
                             <label for="apt-ste">apt/ste number</label>
-                            <input type="text" class="form-control" id="apt-ste-num">
+                            <input type="text" 
+                            name='apt' class="form-control notincl" id="apt-ste-num">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="dwelling-type">Dwelling type</label>
-                            <select id="dwelling" class="form-control">
+                            <select id="dwelling" class="form-control notincl">
                                 <option value="House">House</option>
                                 <option value="Apartment">Apartment</option>
                                 <option value="Business">Business</option>
@@ -337,7 +339,8 @@
 
                             <div class="hiddenother" id="other">
                                 <label for="dwelling-input">So whatcha live in?</label>
-                                <input type="text" id="dwellinginput" class="form-control">
+                                <input type="text" 
+                                name='dwellingtype' id="dwellinginput" class="form-control notincl">
                             </div>
                             <!--closer for .hiddenother-->
                         </div>
@@ -357,12 +360,15 @@
                         <!--3rd form-row-->
                         <div class="form-group col-md-6">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" id="city">
+                            <input type="text" 
+                            name='citytype'class="form-control" id="city">
                         </div>
 
                         <div class="form-group col-md-4">
                             <label for="inputState">State</label>
-                            <select id="state" class="form-control">
+                            <input type="text" name='statetype'
+                            id='state' class="form-control">
+                            <!-- <select id="state" class="form-control">
                                 <option selected>Choose...</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -415,13 +421,13 @@
                                 <option value="WV">West Virginia</option>
                                 <option value="WI">Wisconsin</option>
                                 <option value="WY">Wyoming</option>
-                            </select>
+                            </select> -->
                         </div>
                         <!-- closer for form-group col-md-4 STATE -->
 
                         <div class="form-group col-md-2">
                             <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="zip">
+                            <input type="text" name="zip" class="form-control" id="zip">
                         </div>
                     </div>
                     <!--closer for 3rd form-row-->
@@ -431,12 +437,14 @@
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Iam@socool.com">
+                            <input type="text" name="email" class="form-control" id="email" placeholder="Iam@socool.com">
                         </div>
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6 foneError">
                             <label for="inputPhone">What's your number?</label>
-                            <input type="phonenumber" class="form-control" id="fone" placeholder="555.555.5555">
+                            <input type="text" name='phone' class="form-control" id="fone" placeholder="555.555.5555">
+                            <div class="errorFone"></div>
+
                         </div>
                     </div>
                     <!--closer 4thform-row-->
@@ -451,6 +459,10 @@
                 <form id='streetcreds'>
                     <h3>STREET CREDS</h3>
 
+                    <!-- <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                      </div> -->
                     <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="sameaswhereCheckbox">
@@ -466,7 +478,7 @@
                         <!--1st form-row-->
                         <div class="form-group col-md-12">
                             <label for="name2">Name</label>
-                            <input type="name" class="form-control" id="whosbuying2" placeholder="Who's buying?">
+                            <input type="text" class="form-control" id="whosbuying2" placeholder="Who's buying?">
                             <div id="nameError2"></div>
                         <!--empty div for name reqd message-->
                         </div>
@@ -614,12 +626,12 @@
 
                         <div class="form-group col-md-6">
                             <label for="email2">Email</label>
-                            <input type="email" class="form-control" id="email2" placeholder="Iam@socool.com">
+                            <input type="text" class="form-control" id="email2" placeholder="Iam@socool.com">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="fonenum2">What's your number?</label>
-                            <input type="phonenumber" class="form-control" id="fone2" placeholder="555.555.5555">
+                            <input type="text" class="form-control" id="fone2" placeholder="555.555.5555">
                         </div>
                     </div>
                     <!--closer 4thform-row-->
