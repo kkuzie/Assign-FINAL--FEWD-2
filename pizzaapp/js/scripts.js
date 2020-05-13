@@ -2,15 +2,17 @@ $(document).ready(function(e){
 
 //LANDING PAGE
     $('.order-page').hide();//TEMP SHOWING
-    // $('#streetcreds').hide();
+    // $('#streetcred').hide();
     // $('#gottafindya').hide();
     // $('.paythepiper').hide();
     $('.getmypizza').hide();//TEMP SHOWING
+    $('.creditcard-page').hide();
 
 
 $("#order-btn").click(function() {
     $(".order-page").show();
     $(".landing-page").hide();
+    $(".creditcard-page").hide();
     // $("#delivery-option").text("PICKUP BY CUSTOMER");
 //  });
 
@@ -19,14 +21,21 @@ $("#order-btn").click(function() {
 $("#orderit-btn").click(function() {
     $(".order-page").hide();
     $(".landing-page").hide();    
-    // $('#streetcreds').show();
+    // $('#streetcred').show();
     // $('#gottafindya').show();
     $('.getmypizza').show();
-    $('.paythepiper').hide();
-
-
+    // $('.paythepiper').hide();
   });
-});
+
+$('#payup-btn').click(function () {
+  $(".landing-page").hide();    
+  $(".order-page").hide();
+  $('.getmypizza').hide();
+  $('.creditcard-page').show();
+});//closer for payup-btn func
+
+
+});//closer for order-btn func
 
 
   //***TRIED TO REMOVE DEFAULT CHECK OF RADIO BUTTON - didnt work
@@ -114,7 +123,7 @@ $('#dwelling2').change (function(){
   }
 });//closer for #dwelling2.change func
 
-//GOTTAFINDYA & STREETCREDS FORM VALIDATION
+//GOTTAFINDYA & STREETCRED FORM VALIDATION
 
 //GOTTAFINDYA
 //gets the input tag for each label of form - name, address, etc):
@@ -140,28 +149,37 @@ let zip2 = document.getElementById('zip2');
 let email2 = document.getElementById('email2');
 let fone2 = document.getElementById('fone2');
 
-//SUBMIT BUTTON for gottafindya and streetcreds
+//SUBMIT BUTTON for gottafindya and streetcred
 let payup = document.getElementById('payup-btn');
 
-//GOTTAFINDYA
+//GOTTAFINDYA VALIDATION with REGEX
 //grabs #gottafindya form:
 let gottafindya = document.forms.gottafindya;
 console.log(gottafindya);
 
+//grabs #streetcred form:
+// let streetcred = $('#streetcred');//returns an OBJECT!!
+let streetcred = document.forms.streetcred;
+console.log(streetcred);
+
 //grabs all input tags within #gottafindya
 let gottafindyaInputs = document.querySelectorAll('#gottafindya input:not(.notincl)');
 console.log(gottafindyaInputs);
+let streetcredInputs = document.querySelectorAll('#streetcred input:not(.notincl)');
+console.log(streetcredInputs);
 
 //REGEX patterns for each input field:
 let patterns = {//^ is for start and $ is for the end - the stuff inbetween has to start and end with that part of regex (so if letters incl will be invalid)
+
       name: /^(?![\s.]+$)[a-zA-Z\s.]*$/,
       // address: /^\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\.?/,
       citytype:/^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/,
       statetype:/^([Aa][LKSZRAEPlkszraep]|[Cc][AOTaot]|[Dd][ECec]|[Ff][LMlm]|[Gg][AUau]|[Hh][Ii]|[Ii][ADLNadln]|[Kk][SYsy]|[Ll][Aa]|[Mm][ADEHINOPSTadehinopst]|[Nn][CDEHJMVYcdehjmvy]|[Oo][HKRhkr]|[Pp][ARWarw]|[Rr][Ii]|[Ss][CDcd]|[Tt][NXnx]|[Uu][Tt]|[Vv][AITait]|[Ww][AIVYaivy])$/,
       zip: /(^\d{5}$)|(^\d{9}$)|(^\d{5}-\d{4}$)/,
-      phone:  /^\D?([2-9]{1})(\d{2})\D?\D?(\d{3})\D?(\d{4})$/
+      email: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
+      phone:  /^\D?([2-9]{1})(\d{2})\D?\D?(\d{3})\D?(\d{4})$/,
 
-}
+}//closer for patterns object
 
 //VALIDATION FUNCTION
 function validate(field, regex){//1st param is the name field testing 
@@ -186,7 +204,7 @@ function validate(field, regex){//1st param is the name field testing
   }
 }//closing for function validate()
 
-
+//EVENT LISTENER FOR DELIVERY FORM VALIDATION
 gottafindyaInputs.forEach((input) => {
     input.addEventListener('keyup', e => {
         console.log(e.target.attributes.name.value);//take event, target the element that the event occurred on, get the attribute of target, then name attribute, then value of name attr.
@@ -200,9 +218,35 @@ gottafindyaInputs.forEach((input) => {
         //essentially, passing the target element and regular expression for that element.
 
     });//closer for input.addEventListener-keyup
+
     gottafindya.reset();
 
 });//closer for gottafindyaInputs.forEach()
+
+//EVENT LISTENER FOR BILLING FORM VALIDATION
+streetcredInputs.forEach((input) => {
+  input.addEventListener('keyup', e => {
+    console.log(e.target.attributes.name.value);
+    //call validate function:
+    validate(e.target, patterns[e.target.attributes.name.value]);
+});//closer for input.addEventListener-keyup
+
+  streetcred.reset();
+
+});//closer for gottafindyaInputs.forEach()
+
+
+/////////DUPLICATE DELIVERY ADDRESS to BILLING when checked
+
+$('#dup').click(function() {
+  "use strict";
+    $('#whosbuying2').val($('#whosbuying').val());
+    $('#address2').val($('#address').val());
+    $('#apt-ste-num2').val($('#apt-ste-num').val());
+    $('#city2').val($('#city').val());
+    $('#state2').val($('#state').val());
+    $('#zip2').val($('#zip').val());
+});
 
 
 
@@ -329,7 +373,48 @@ gottafindyaInputs.forEach((input) => {
 
 //   <button type="btn" class="btn btn-danger" id="delivery-btn">Delivery</button>
 
+/////////FIRST TRY TO DUPLICATE GOTTAFINDYA FORM - START
+//EVENT LISTENER FOR DUP GOTTAFINDYA TO STREETCRED CHECKBOX
+// $('#dup').addEventListener("click", streetcreddup);
+// $('#dup').on(function (streetcreddup));
+// $('#dup').on("click", streetcreddup);
 
+//DUP GOTTAFINDYA TO STREETCREDS
+// $('#dup').on("check", function streetcreddup() {
+  // $(".dup").click(function(e){
+// function streetcreddup() {
+//   "use strict";
+//   let dwelling = $('#dwelling');//select type name gottafindya
+//   let dwelling2 = $('#dwelling2');//select type name streetcred
+
+//   if($('#dup').checked === true) {
+//       $('#whosbuying2').value = $('#whosbuying').value;
+//       dwelling2.options[dwelling2.selectedIndex].text = dwelling.options[dwelling.selectedIndex].text;
+//       $('#address2').value = $('#address').value;////input id
+//       $('#apt-ste-num2').value = $('#apt-ste-num').value;
+//       $('#city2').value = $('#city').value;
+//       $('#state2').value = $('#state').value;
+//       $('#zip2').value = $('#zip').value;
+//   }//closer for $('#sameas').checked ifstmt true
+//   if ($('#dup').checked === false) {
+//       $('#whosbuying2').value = "";
+//       dwelling2.options[dwelling2.selectedIndex].text = "";
+//       $('#address2').value = "";
+//       $('#apt-ste-num2').value = "";
+//       $('#city2').value = "";
+//       $('#state2').value = "";
+//       $('#zip2').value = "";
+//   }//closer for $('#sameas').checked ifstmt false
+// };//closer for function streedcreddup
+
+// // });
+// // streetcreddup();
+// window.addEventListener("load", function () {
+
+// $('#dup').addEventListener("click", streetcreddup);
+// });//closer for load
+
+//////END - FIRST TRY DUPLICATE GOTTAFINDYA FORM
 
 
 
