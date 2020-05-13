@@ -22,11 +22,11 @@
         <!-- LANDING PAGE -->
 
         <div class="landing-page">
-            <div id="pizza-home"></div>
-            <img id='pepperoni' src="/pizzaapp/images/pepperoni-transparent-3.png" alt="pepperoni">
+            <div id="pizza-home">
+            <!-- <img id='pepperoni' src="/pizzaapp/images/pepperoni-transparent-3.png" alt="pepperoni"> -->
             <img id='logo' src="/pizzaapp/images/PeppeRoni-logo.png" alt="logo">
 
-            <h1>Peppe & Roni Pizza</h1>
+            <!-- <h1>Peppe & Roni Pizza</h1> -->
             <p>Giuseppe and Veronica Marini started making pizza on there first date, when they fell in love. They want
                 to do the same for you.
 
@@ -39,7 +39,8 @@
                     <img src="/pizzaapp/images/PeppeRoni-logo.png" alt="logo">
                 </div>
             </div> -->
-
+</div>
+<!-- closer for pizza-home -->
             <div class="landing-btns">
                 <!-- <div class="dot"></div>
                 <div class="dot"></div>
@@ -273,6 +274,7 @@
 
         <!-- GOTTA FIND YA - delivery address -->
         <div class="getmypizza">
+            <!-- encapsulates gottafindya and streetcreds  -->
 
             <div class="circle2"></div>
 
@@ -284,8 +286,8 @@
                         <!--1st form-row-->
                         <div class="form-group col-md-12">
                             <label for="name">Name</label>
-                            <input type="text" 
-                            name='name' class="form-control" id="whosbuying" placeholder="Who's buying?">
+                            <input type="text" name='name' class="form-control" id="whosbuying"
+                                placeholder="Who's buying?">
                             <div id="nameError"></div>
                             <!--empty div for name reqd message-->
                         </div>
@@ -321,8 +323,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="apt-ste">apt/ste number</label>
-                            <input type="text" 
-                            name='apt' class="form-control notincl" id="apt-ste-num">
+                            <input type="text" name='apt' class="form-control notincl" id="apt-ste-num">
                         </div>
 
                         <div class="form-group col-md-6">
@@ -339,8 +340,7 @@
 
                             <div class="hiddenother" id="other">
                                 <label for="dwelling-input">So whatcha live in?</label>
-                                <input type="text" 
-                                name='dwellingtype' id="dwellinginput" class="form-control notincl">
+                                <input type="text" name='dwellingtype' id="dwellinginput" class="form-control notincl">
                             </div>
                             <!--closer for .hiddenother-->
                         </div>
@@ -360,14 +360,12 @@
                         <!--3rd form-row-->
                         <div class="form-group col-md-6">
                             <label for="city">City</label>
-                            <input type="text" 
-                            name='citytype'class="form-control" id="city">
+                            <input type="text" name='citytype' class="form-control" id="city">
                         </div>
 
                         <div class="form-group col-md-4">
                             <label for="inputState">State</label>
-                            <input type="text" name='statetype'
-                            id='state' class="form-control">
+                            <input type="text" name='statetype' id='state' class="form-control">
                             <!-- <select id="state" class="form-control">
                                 <option selected>Choose...</option>
                                 <option value="AL">Alabama</option>
@@ -437,7 +435,8 @@
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail">Email</label>
-                            <input type="text" name="email" class="form-control" id="email" placeholder="Iam@socool.com">
+                            <input type="text" name="email" class="form-control" id="email"
+                                placeholder="Iam@socool.com">
                         </div>
 
                         <div class="form-group col-md-6 foneError">
@@ -454,207 +453,49 @@
                 <!--closer for #gottafindya-->
                 <br><br>
 
-                <!--STREET CREDS - billing info-->
 
-                <form id='streetcreds'>
-                    <h3>STREET CREDS</h3>
-
-                    <!-- <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-                      </div> -->
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="sameaswhereCheckbox">
-                            <label class="form-check-label" for="sameaswhere-checkbox">
-                                Street creds same as where we find ya?
-                                <h6>(billing same as delivery address?)</h6>
-                            </label>
-                        </div>
-                    </div>
-                    <!-- closer for form-group  CHECKBOX-->
-
-                    <div class="form-row">
-                        <!--1st form-row-->
-                        <div class="form-group col-md-12">
-                            <label for="name2">Name</label>
-                            <input type="text" class="form-control" id="whosbuying2" placeholder="Who's buying?">
-                            <div id="nameError2"></div>
-                        <!--empty div for name reqd message-->
-                        </div>
-                        <!-- closer for form-group col-md-12 NAME2-->
-
-                        <!-- <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
-                    </div> -->
-
-                        <!-- <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4">
-                    </div> -->
-                    </div>
-                    <!--closer 1st form-row-->
-
-                    <!-- ??? WHY ISNT THIS IN A ROW DIV ??? -->
-                    <div class="form-group">
-                        <label for="inputAddress2">Address</label>
-                        <input type="text" class="form-control" id="address2"
-                            placeholder="6789 End of the Road Road">
-                    </div>
-
-                    <!-- <div class="form-group">
-                            <label for="inputAddress2">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2"
-                                placeholder="Apartment, studio, or floor">
-                        </div> -->
-
-                    <div class="form-row">
-                        <!--2nd form-row-->
-
-                        <div class="form-group col-md-6">
-                            <label for="apt-ste">apt/ste number</label>
-                            <input type="text" class="form-control" id="apt-ste-num2">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="dwelling-type2">Dwelling type</label>
-                            <select id="dwelling2" class="form-control">
-                                <option value="House">House</option>
-                                <option value="Apartment">Apartment</option>
-                                <option value="Business">Business</option>
-                                <option value="Campus">Campus</option>
-                                <option value="Hotel">Hotel</option>
-                                <option value="Dorm">Dorm</option>
-                                <option value="Other...">Other...</option>
-                            </select>
-
-                            <div class="hiddenother2" id="other2">
-                                <label for="dwelling-input2">So whatcha live in?</label>
-                                <input type="text" id="dwellinginput2" class="form-control">
-                            </div>
-                            <!--closer for .hiddenother-->
-                        </div>
-                        <!--closer for Dwelling type class div-->
-
-                    </div>
-                    <!--closer for 2nd form-row-->
-
-                    <!-- <div class="form-group col-md-6">
-                                <label for="inputState">State</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                </select>
-                            </div> -->
-
-                    <div class="form-row">
-                        <!--3rd form-row-->
-                        <div class="form-group col-md-6">
-                            <label for="city2">City</label>
-                            <input type="text" class="form-control" id="city2">
-                        </div>
-
-                        <div class="form-group col-md-4 state">
-                            <label for="state2">State</label>
-                            <select id="state2" class="form-control">
-                                <option selected>Choose...</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District Of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
-                            </select>
-                        </div>
-                        <!-- closer for .state -->
-
-                        <div class="form-group col-md-2">
-                            <label for="zip2">Zip</label>
-                            <input type="text" class="form-control" id="zip2">
-                        </div>
-                    </div>
-                    <!--closer for 3rd form-row-->
-
-                    <div class="form-row">
-                        <!-- 4th form-row -->
-
-                        <div class="form-group col-md-6">
-                            <label for="email2">Email</label>
-                            <input type="text" class="form-control" id="email2" placeholder="Iam@socool.com">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="fonenum2">What's your number?</label>
-                            <input type="text" class="form-control" id="fone2" placeholder="555.555.5555">
-                        </div>
-                    </div>
-                    <!--closer 4thform-row-->
-                </form>
-                <!--closer for #streetcreds-->
 
                 <div class="payup-btns">
                     <button type="submit" class="btn btn-primary" id='payup-btn'>Get my pizza</button>
                     <!-- <button type="btn" class="box" id="order-btn">Order up</button> -->
                     <button type="text" class="btn btn-primary" id='payup-btn2'>TOTAL</button>
                 </div>
-
+            </div>
+            <!-- closer for payup-circle  -->
             </div><!-- closer for .getmypizza -->
+           <br><br>
 
-            <br><br>
 
-            <form action="" class="paythepiper">
+<!-- CREDIT CARD INFO -->
+
+<div class="creditcard-page">
+    <div id="circle-paypage"></div>
+    <div class="pay-page">
+           <form action="" class="paythepiper">
+
+
+
+
+
+
+
                 <h3>Pay the piper</h3>
-                <label for="ccn">Credit Card Number:</label><input type="text" id="ccn" class="form-control"><br>
 
-                <label for="cvc">CVC (security code on back)</label><input type="text" id="cvc"
-                    class="form-control"><br>
+                <div class="form-row">
+                <div class="form-group col-md-12">
+                <label for="ccn">Credit Card Number:</label>
+                <input type="text" id="ccn" class="form-control"><br>
+                </div>
 
+                <div class="form-group col-md-3">
+                <label for="cvc">CVC</label>
+                <input type="text" id="cvc" class="form-control">
+                <label style="font-size: .5em;">security code on back</label>
+
+                <br>
+                </div>
+
+                <div class="form-group col-md-5">
                 <label>Expires:</label>
                 <select class="form-control" id="ex-month">
                     <option value="jan">January</option>
@@ -669,8 +510,12 @@
                     <option value="oct">October</option>
                     <option value="nov">November</option>
                     <option value="dec">December</option>
-                </select><br>
-                <select class="form-control" id="ex-year">
+                </select>
+                </div><br>
+
+                <div class="form-group col-md-4">
+                    <label for=""></label>
+                <select class="form-control" id="ex-year" style="margin-top: .5em;">
                     <option value="2020">2020</option>
                     <option value="2015">2021</option>
                     <option value="2016">2022</option>
@@ -678,16 +523,144 @@
                     <option value="2018">2024</option>
                     <option value="2019">2025</option>
                     <option value="2015">2026</option>
-                </select><br>
-
-                <div class="payup-btns">
-                    <button type="submit" class="btn btn-primary" id='payup-btn'>Pay up!</button>
-                    <!-- <button type="btn" class="box" id="order-btn">Order up</button> -->
-                    <button type="text" class="btn btn-primary" id='payup-btn2'>TOTAL</button>
+                </select>
                 </div>
-
+                </div><br>
             </form><!-- closer for .paythepiper -->
-        </div><!-- closer for .payup-circle -->
+
+                            <!--STREET CRED - billing info-->
+
+                            <form id='streetcred'>
+                                <h3>STREET CRED</h3>
+            
+                                <!-- <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                                  </div> -->
+                                <div class="form-group">
+                                    <div class="form-check dup">
+                                        <input class="form-check-input" type="checkbox" id="dup">
+                                        <label class="form-check-label" for="sameaswhere-checkbox">
+                                            Street cred same as where we find ya?
+                                            <h6>(billing same as delivery address?)</h6>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- closer for form-group  CHECKBOX-->
+            
+                                <div class="form-row">
+                                    <!--1st form-row-->
+                                    <div class="form-group col-md-12">
+                                        <label for="name2">Name</label>
+                                        <input type="text" name="name" class="form-control" id="whosbuying2"
+                                            placeholder="Who's buying?">
+                                        <div id="nameError2"></div>
+                                        <!--empty div for name reqd message-->
+                                    </div>
+                                    <!-- closer for form-group col-md-12 NAME2-->
+            
+                                    <!-- <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail4">
+                                </div> -->
+            
+                                    <!-- <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword4">
+                                </div> -->
+                                </div>
+                                <!--closer 1st form-row-->
+            
+                                <!-- ??? WHY ISNT THIS IN A ROW DIV ??? -->
+                                <!-- <div class="form-group">
+                                    <label for="inputAddress2">Address</label>
+                                    <input type="text" class="form-control" id="address2"
+                                        placeholder="6789 End of the Road Road">
+                                </div> -->
+            
+                                <!-- <div class="form-group">
+                                        <label for="inputAddress2">Address 2</label>
+                                        <input type="text" class="form-control" id="inputAddress2"
+                                            placeholder="Apartment, studio, or floor">
+                                    </div> -->
+            
+                                <div class="form-row">
+                                    <!--2nd form-row-->
+            
+                                    <div class="form-group col-md-8">
+                                        <label for="inputAddress2">Address</label>
+                                        <input type="text" name="address" class="form-control notincl" id="address2"
+                                            placeholder="6789 End of the Road Road">
+                                    </div>
+            
+                                    <div class="form-group col-md-4">
+                                        <label for="apt-ste">apt/ste number</label>
+                                        <input type="text" class="form-control notincl" id="apt-ste-num2">
+                                    </div>
+            
+                                </div>
+                                <!--closer for 2nd form-row-->
+            
+                                <!-- <div class="form-group col-md-6">
+                                            <label for="inputState">State</label>
+                                            <select id="inputState" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div> -->
+            
+                                <div class="form-row">
+                                    <!--3rd form-row-->
+                                    <div class="form-group col-md-6">
+                                        <label for="city2">City</label>
+                                        <input type="text" name="citytype" class="form-control" id="city2">
+                                    </div>
+            
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">State</label>
+                                        <input type="text" name='statetype' id='state2' class="form-control">
+                                    </div>
+                                    <!-- closer for form-group col-md-4 STATE -->
+            
+                                    <div class="form-group col-md-2">
+                                        <label for="zip2">Zip</label>
+                                        <input type="text" name="zip" class="form-control" id="zip2">
+                                    </div>
+                                </div>
+                                <br><br>
+                                <!--closer for 3rd form-row-->
+            
+                                <!-- <div class="form-row"> -->
+                                <!-- 4th form-row -->
+            
+                                <!-- <div class="form-group col-md-6">
+                                        <label for="email2">Email</label>
+                                        <input type="text" class="form-control" id="email2" placeholder="Iam@socool.com">
+                                    </div>
+            
+                                    <div class="form-group col-md-6">
+                                        <label for="fonenum2">What's your number?</label>
+                                        <input type="text" class="form-control" id="fone2" placeholder="555.555.5555">
+                                    </div>
+                                </div> -->
+                                <!--closer 4thform-row-->
+                            </form>
+                            <!--closer for #streetcred-->
+
+            <div class="paythepiper-btns">
+                <button type="submit" class="btn btn-primary" id='paythepiper-btn'>Pay the piper!</button>
+                <!-- <button type="btn" class="box" id="order-btn">Order up</button> -->
+                <button type="text" class="btn btn-primary" id='paythepiper-btn2'>TOTAL</button>
+            </div>
+        </div>
+        <!-- closer for pay-page     -->
+        </div>
+        <!-- closer for creditcard-page  -->
+<!-- END CREDIT CARD INFO -->
+
+
+        </>
+        <!-- closer for .payup-circle -->
     </main>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
