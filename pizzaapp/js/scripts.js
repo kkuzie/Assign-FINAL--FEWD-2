@@ -1,5 +1,11 @@
 $(document).ready(function(e){
 
+//   if (document.readyState == 'loading') {
+//     document.addEventListener('DOMContentLoaded', ready);
+// } else {
+//     ready();
+// }
+
 //LANDING PAGE
     $('.order-page').hide();//TEMP SHOWING
     // $('#streetcred').hide();
@@ -50,50 +56,193 @@ $('#payup-btn').click(function () {
 // });
 
   // $('.hand').hide();//not hidden so will show automatically since it is default checked radio button 
+
+  //**** DROPDOWNS FOR CRUST */
+  $(".hand").hide();
   $('.skinny').hide();
   $('.ny').hide();
   $('.gluten').hide();
 
 
-$("#hand1st").click(function() {
+$("#customRadio1").click(function() {
   $(".hand").show();
   $('.skinny').hide();
   $('.ny').hide();
   $('.gluten').hide();
 });
 
-$("#skinny1st").click(function() {
+$("#customRadio2").click(function() {
   $('.hand').hide();
   $(".skinny").show();
   $('.ny').hide();
   $('.gluten').hide();
   });
 
-$("#ny1st").click(function() {
+$("#customRadio3").click(function() {
   $('.hand').hide();
   $(".skinny").hide();
   $('.ny').show();
   $('.gluten').hide();
   });
   
-$("#gluten1st").click(function() {
+$("#customRadio4").click(function() {
   $('.hand').hide();
   $(".skinny").hide();
   $('.ny').hide();
   $('.gluten').show();
   });
-  
-  $('.saycheese').hide();
-  $('.top').hide();
-  $('.saucy').hide();
-  // $('#orderit-btn').hide();
+  //****END DROPDOWNS FOR CRUST */
 
 //ADDRESS SECTION
 $('#other').hide();//TEMP SHOW
 $('#other2').hide();//TEMP SHOW
 
+  //***TOPPINGS - ONLY SHOW AFTER CRUST CHOSEN */
+  $('.saycheese').hide();
+  $('.top').hide();
+  $('.saucy').hide();
+  $('.circle1').hide();
+  $('#orderit-btn').hide();
+  // $('#orderit-btn').hide();
+
+///////PICK CRUST
+let crustys = document.querySelector('#crustys');
+console.log(crustys + 'this damnwell work');
 
 
+let price ;
+let sizeprice = document.querySelector('.sizeprice');
+let hand = document.querySelector('.hand');
+let skinny = document.querySelector('.skinny');
+let ny = document.querySelector('.ny');
+let gluten = document.querySelector('.gluten');
+console.log(sizeprice);
+console.log(hand);
+console.log(skinny);
+console.log(ny);
+console.log(gluten);
+
+
+// console.log(sizeprice.value);//returns 1 2 or 3
+console.log(hand.value);
+
+let selected = sizeprice.querySelector('option[selected]');
+console.log(selected);
+console.log(selected.value);
+// let option = sizeprice.querySelector('option [value]');
+// console.log(option);//returns null
+
+// let customradio = document.querySelector('.custom-radio');
+// console.log(customradio);//only pulls #hand1st - possibly cuz others are hidden until chosen?
+crustys.reset();
+$("#gettherest-btn").click(function() {
+  // document.querySelector(".sizeprice").onchange=function() {
+  //   var val = this.value;
+  //   console.log(val);
+  
+  if(hand.value == selected.value || skinny.value == selected.value || ny.value == selected.value || gluten.value == selected.value) {
+    // alert('please pick crust');
+    $('#crustys').append('<div id="choosecrust"></div>');
+    $('#choosecrust').text('Hey, hey! pick a size!');
+    // $(".order-page").hide();
+    // $(".landing-page").hide();    
+    // $('.getmypizza').show();
+  } else if (hand.value == 1){
+    let type = 'hand1';
+    clearFields(type);
+    price = 9.99;
+   console.log(price);
+   showTop(); 
+  } else if  (hand.value == 2){
+    let type = 'hand1';
+    clearFields(type);
+    price = 12.99;
+     showTop(); 
+  } else if (hand.value == 3){
+    let type = 'hand1';
+    clearFields(type);
+    price = 14.99;
+     showTop(); 
+  } else if (skinny.value == 4){
+      let type = 'skinny1';
+      clearFields(type);
+      price = 11.99;
+       showTop(); 
+  } else if (skinny.value == 5){
+        let type = 'skinny1';
+        clearFields(type);
+        price = 13.99;
+         showTop(); 
+  } else if (ny.value == 6){
+          let type = 'ny1';
+          clearFields(type);
+          price = 16.99;
+           showTop(); 
+  } else if (ny.value == 7){
+            let type = 'ny1';
+            clearFields(type);
+            price = 19.99;
+             showTop();
+  } else if (gluten.value == 8){
+              let type = 'gluten1';
+              clearFields(type);
+              price = 10.99;
+               showTop(); 
+  // (hand.value == 1 || hand.value == 2 || hand.value == 3 || skinny.value == 4 || skinny.value == 5 || ny.value == 6 || ny.value == 7 || gluten.value == 8) {
+  } 
+});
+/////FUNCTION FOR SHOWING TOPPINGS AFTER CRUST PICKED
+function showTop() {
+  $('.saycheese').show();
+    $('.top').show();
+    $('.saucy').show();
+    $('.circle1').show();
+    $('#orderit-btn').show(); 
+    $('.circle').hide();    
+    $('#gettherest-btn').hide();  
+    $('.crustys').append('<div id="choosecrust"></div>');
+    $('#choosecrust').text('');
+}
+//////FUNCTION FOR RESETTING DROPDOWN FIELDS WHEN NEW SIZE/PRICE CHOSEN
+  function clearFields (type){
+    if(type === "hand1"){
+     document.getElementById('skinny1').selected = "true";
+    document.getElementById('ny1').selected = "true";
+    document.getElementById('gluten1').selected = "true";
+    } else if (type === "skinny1") {
+      document.getElementById('hand1').selected = "true";
+      document.getElementById('ny1').selected = "true";
+      document.getElementById('gluten1').selected = "true";
+  } else if (type === "ny1") {
+    document.getElementById('hand1').selected = "true";
+    document.getElementById('skinny1').selected = "true";
+    document.getElementById('gluten1').selected = "true";
+  } else if (type === "gluten1") {
+    document.getElementById('hand1').selected = "true";
+    document.getElementById('skinny1').selected = "true";
+    document.getElementById('ny1').selected = "true";
+  }
+}
+
+// let dwelling = document.querySelector('#dwelling');
+// console.log(dwelling);
+
+// // let other = document.querySelector('#other');
+// // console.log(other);
+
+// $('#dwelling').change (function(){
+//   if (dwelling.value == 'Other...'){
+//     $('#other').show();
+//   }else {
+//     $('#other').hide();
+//   }
+// });
+// console.log(dwelling.value);
+
+
+
+
+//******DWELLING TYPE - OTHER DROP DOWN */
 let dwelling = document.querySelector('#dwelling');
 console.log(dwelling);
 
@@ -162,11 +311,17 @@ console.log(gottafindya);
 let streetcred = document.forms.streetcred;
 console.log(streetcred);
 
+//grabs #paythepiper - note: forms.WHATEVER only seems to work on ids not classes
+let paythepiper = document.forms.paythepiper;
+console.log(paythepiper);
+
 //grabs all input tags within #gottafindya
 let gottafindyaInputs = document.querySelectorAll('#gottafindya input:not(.notincl)');
 console.log(gottafindyaInputs);
 let streetcredInputs = document.querySelectorAll('#streetcred input:not(.notincl)');
 console.log(streetcredInputs);
+let paythepiperInputs = document.querySelectorAll('#paythepiper input');
+console.log(paythepiperInputs);
 
 //REGEX patterns for each input field:
 let patterns = {//^ is for start and $ is for the end - the stuff inbetween has to start and end with that part of regex (so if letters incl will be invalid)
@@ -178,6 +333,11 @@ let patterns = {//^ is for start and $ is for the end - the stuff inbetween has 
       zip: /(^\d{5}$)|(^\d{9}$)|(^\d{5}-\d{4}$)/,
       email: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
       phone:  /^\D?([2-9]{1})(\d{2})\D?\D?(\d{3})\D?(\d{4})$/,
+      cvv: /^[0-9]{3,4}$/,
+      // visa:  /^4[0-9]{12}(?:[0-9]{3})?$/,
+      mc: /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$ /,
+      // amex: /^3[47][0-9]{13}$/,
+      ccn:  /^(?:4[0-9]{12}(?:[0-9]{3})?|(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|3[47][0-9]{13})$/,
 
 }//closer for patterns object
 
@@ -232,6 +392,17 @@ streetcredInputs.forEach((input) => {
 });//closer for input.addEventListener-keyup
 
   streetcred.reset();
+
+});//closer for gottafindyaInputs.forEach()
+
+paythepiperInputs.forEach((input) => {
+  input.addEventListener('keyup', e => {
+    console.log(e.target.attributes.name.value);
+    //call validate function:
+    validate(e.target, patterns[e.target.attributes.name.value]);
+});//closer for input.addEventListener-keyup
+
+  paythepiper.reset();
 
 });//closer for gottafindyaInputs.forEach()
 
@@ -416,7 +587,209 @@ $('#dup').click(function() {
 
 //////END - FIRST TRY DUPLICATE GOTTAFINDYA FORM
 
+///////START VALIDATE CRUST - THIRD TRY
+// $('#orderit-btn').on('click', e => {
 
+//   "use strict";
+
+// document.querySelector("#handcrust").addEventListener("change", function(e){
+// 	alert(e.target.value)
+// })
+  // let i, crustpick, s, select = $('#handcrust'),
+      // sizePrice, option;
+
+  // if ($('#customRadio1').click) {
+  // $("#hand1st").click(function() {
+  //     alert('yup');
+  //     $(".hand").show();
+  //     $('.skinny').hide();
+  //     $('.ny').hide();
+  //     $('.gluten').hide();
+    
+  // })
+  // ($('#customRadio2').checked) {
+      // crustType = "skinnydippin";
+      // $("#skinny1st").click(function() {
+      //   $('.hand').hide();
+      //   $(".skinny").show();
+      //   $('.ny').hide();
+      //   $('.gluten').hide();
+      // })
+      
+  // } else if ($('#ny1st').checked) {
+  //     // crustType = "iheartny";
+  //     // $("#ny1st").click(function() {
+  //       $('.hand').hide();
+  //       $(".skinny").hide();
+  //       $('.ny').show();
+  //       $('.gluten').hide();
+  //       // });
+
+
+  // } else if ($('#gluten1st').checked) {
+  //     // crustType = "glutenless";
+  //     // $("#gluten1st").click(function() {
+  //       $('.hand').hide();
+  //       $(".skinny").hide();
+  //       $('.ny').hide();
+  //       $('.gluten').show();
+  //       // });
+
+  // } else {
+  //     // crustType = "none";
+  //     // setPhase(phases.crustType);
+  //     // updateOrder();
+  //     return;
+  // }
+
+// });//closer for .onchange func orderit()
+///////END VALIDATE CRUST - THIRD TRY
+
+//////START VALIDATE CRUST - SECOND TRY
+// let sizePrice = {
+
+//   "bythehand": [
+//       {
+//           size: "Lil Sis",
+//           price: 9.99
+//       },
+//       {
+//           size: "Middle Child",
+//           price: 12.99
+//       },
+//       {
+//           size: "Big Brother",
+//           price: 14.99
+//       }
+//   ],
+//   "skinnydippin": [
+//       {
+//           size: "Middle Child",
+//           price: 11.99
+//       },
+//       {
+//           size: "Big Brother",
+//           price: 13.99
+//       }
+//   ],
+//   "iheartny": [
+//       {
+//           size: "Big Boss",
+//           price: 16.99
+//       },
+//       {
+//           size: "Godfather",
+//           price: 19.99
+//       }
+//   ],
+//   "glutenless": [
+//       {
+//           size: "Lil Sis",
+//           price: 10.99
+//       }
+//   ]
+// };
+// //SETTING PRICES TO 0
+// let currentPrice = [0, 0, 0, 0];
+
+// //VERIFY SELECTED VALUE OF ITEM IN RADIO BUTTON FOR CRUST OPTIONS
+// //PROGRAMMATICALLY ADDING TO A DROP DOWN LIST
+// function verifyCrust() {
+//   "use strict";
+
+//   let i, crustpick, s, select = $('#handcrust'),
+//       sizePrice, option;
+//   if ($('#customRadio1').checked) {
+//       crustType = "bythehand";
+
+//   } else if ($('#customRadio2').checked) {
+//       crustType = "skinnydippin";
+
+
+//   } else if ($('#customRadio3').checked) {
+//       crustType = "iheartny";
+
+
+//   } else if ($('#customRadio4').checked) {
+//       crustType = "glutenless";
+
+
+//   } else {
+//       crustType = "none";
+//       // setPhase(phases.crustType);
+//       // updateOrder();
+//       return;
+//   }
+
+//   sizeandprice = sizePrice[crustType];
+
+
+
+
+
+// $('#orderit-btn').addEventListener('submit', e => {
+//   e.preventDefault;
+// 	if(e.target.value){
+//     continue;
+//   } else {
+//     alert('please choose size');
+//   }
+
+// });
+
+////THIS WORKS BUT NOT FOR WHAT I NEED
+// document.querySelector("#handcrust").addEventListener("change", function(e){
+// 	alert(e.target.value)
+// })
+//////END VALIDATE CRUST - SECOND TRY
+
+//////START VALIDATE CRUST - FIRST TRY
+// let crusts = [
+// 	{type: 'handTossed',
+// 	size: 'Small',
+// 	price: '9.99'},
+// 	{type: 'handTossed',
+// 	size: 'Medium',
+// 	price: '12.99'},
+// 	{type: 'handTossed',
+// 	size: 'Large',
+// 	price: '14.99'},
+// 	{type: 'thinCrust',
+// 	size: 'Medium',
+// 	price: '11.99'},
+// 	{type: 'thinCrust',
+// 	size: 'Large',
+// 	price: '13.99'},
+// 	{type: 'newYork',
+// 	size: 'Large',
+// 	price: '16.99'},
+// 	{type: 'newYork',
+// 	size: 'Extra Large',
+// 	price: '19.99'},
+// 	{type: 'glutenFree',
+// 	size: 'Small',
+// 	price: '10.99'}
+// ];
+
+// function crustType(crustType) {
+//   let crust = document.querySelector('.crust');
+//   console.log(crust);
+//     let crustValue = '';
+//     		for (let i=0; i<crust.length; i++) {
+//     			let crustpick = crust[i];
+// 			    	if (crustpick.checked) {
+//               crustValue = crustpick.value;
+//               break;
+// 	    			}
+//             else crustValue = 'noRadioChecked';
+//             }
+// 		      	if (crustValue === 'noRadioChecked') {
+// 		        	alert('Please select a dough type');
+// 	      		} 
+// 	          return crustValue;
+// }//closer for func crustType
+// crustType();
+//////END VALIDATE CRUST - FIRST TRY
 
 
 
