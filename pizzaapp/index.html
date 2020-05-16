@@ -26,8 +26,8 @@
             <!-- <img id='pepperoni' src="/pizzaapp/images/pepperoni-transparent-3.png" alt="pepperoni"> -->
             <img id='logo' src="/pizzaapp/images/PeppeRoni-logo.png" alt="logo">
 
-            <!-- <h1>Peppe & Roni Pizza</h1> -->
-            <p>Giuseppe and Veronica Marini started making pizza on there first date, when they fell in love. They want
+            <h1>Peppe & Roni Pizza</h1>
+            <p>Giuseppe and Veronica Marini started making pizza on their first date, when they fell in love. <br>They want
                 to do the same for you.
 
             </p>
@@ -66,8 +66,9 @@
 
         <div class="order-page">
             <div class="circle"></div>
+            <div class="circle1"></div>
             <div class="orderall">
-                <div class="crust-choice">
+                <form id="crustys">
                     <!-- <div class="saycheese"> -->
                     <!-- <h2>Say cheese!</h2> -->
                     <h2>Crusts</h2>
@@ -83,20 +84,22 @@
                 I want you to work with objects using literal notation in this step. Specifically the pizza sizes/prices should be stored in an object and then bound to the drop down list programmatically but only when the user selects a dough option first. Although the entire form (in this part) can be built this way, I want you to only focus on this technique for this step. -->
 
                     <!-- RADIO BUTTONS & DROPDOWNS for crust -->
+
                     <div class="custom-control custom-radio" id='hand1st'>
                         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                         <label class="custom-control-label hand1st" for="customRadio1">
                             <h3>By the hand...</h3>
                             <!-- Nah, not feeling it -->
                         </label>
-
-                        <select class="custom-select hand">
-                            <option selected>Tossed by hand - Select size</option>
+                 
+                        <select class="custom-select hand sizeprice">
+                            <option id="hand1" value="0" selected>Tossed by hand - Select size</option>
                             <option value="1">Little Sis 12" $9.99</option>
                             <option value="2">Middle Child 14" $12.99</option>
                             <option value="3">Big Brother 16" $14.99</option>
-                        </select>
-                    </div>
+                        </select> 
+                    </div> 
+
                     <!--closer for hand1st-->
 
                     <div class="custom-control custom-radio" id="skinny1st">
@@ -106,24 +109,23 @@
                             <!-- Yup, cheese it up! -->
                         </label>
 
-                        <select class="custom-select skinny">
-                            <option selected>Cracker thin and crunchy - Select Size</option>
-                            <option value="1">Middle Child 12" $11.99</option>
-                            <option value="2">Big Brother 14" $13.99</option>
+                        <select class="custom-select skinny sizeprice">
+                            <option id="skinny1" selected>Cracker thin and crunchy - Select Size</option>
+                            <option value="4">Middle Child 12" $11.99</option>
+                            <option value="5">Big Brother 14" $13.99</option>
                         </select>
-
-
                     </div>
+
                     <div class="custom-control custom-radio" id="ny1st">
                         <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
                         <label class="custom-control-label" for="customRadio3">
                             <h3>i <span style="font-size:120%;color:red;">&hearts;</span> NY</h3>
                         </label>
 
-                        <select class="custom-select ny">
-                            <option selected>New Yorker Style - Select Size</option>
-                            <option value="1">Big Boss 18" $16.99</option>
-                            <option value="2">Godfather 20" $19.99</option>
+                        <select class="custom-select ny sizeprice">
+                            <option id="ny1" selected>New Yorker Style - Select Size</option>
+                            <option value="6">Big Boss 18" $16.99</option>
+                            <option  value="7">Godfather 20" $19.99</option>
                         </select>
 
                     </div>
@@ -133,14 +135,16 @@
                             <h3>Glutenless for punishment</h3>
                         </label>
 
-                        <select class="custom-select gluten">
-                            <option selected>Only one size option</option>
-                            <option value="1">Little Sis 12" $10.99</option>
+                        <select class="custom-select gluten sizeprice">
+                            <option id="gluten1" selected>Only one size option</option>
+                            <option value="8">Little Sis 12" $10.99</option>
                         </select>
                     </div>
-
-                </div>
+                    </form>
+                </div> <!--closer for .orderall  -->
                 <!-- </div>closer for saycheese/crusts -->
+                   <button type="btn" class="box" id="gettherest-btn">Get the rest!</button>
+
                 <br><br>
 
                 <!-- <div class="crust"> -->
@@ -177,15 +181,16 @@
 
                 <!-- STEP 3: 
             Add a drop down list for cheese options. Populate the list items with these options:a.Light: no chargeb.    Normal (default): no chargec.Extra: +$2.99d.    Double: +$3.99 -->
+            <div class="restoftop">
                 <div class="saycheese">
                     <!-- <div class="ezcheesy"> -->
                     <!-- <h2>Easy Cheesy</h2> -->
                     <h2>Say Cheese!</h2>
-                    <select class="custom-select">
+                    <select class="custom-select" name='cheeseoptions' id='cheese'>
                         <option selected>The usual - no charge</option>
-                        <option value="1">Easy cheesy - no charge</option>
-                        <option value="2">A little more +$2.99</option>
-                        <option value="3">Make it a double +$3.99</option>
+                        <option value="ezcheese">Easy cheesy - no charge</option>
+                        <option value="alittlemore">A little more +$2.99</option>
+                        <option value="pileiton">Pile it on! +$3.99</option>
                     </select>
                 </div>
                 <!--closer for saycheese/ezcheesy-->
@@ -266,8 +271,16 @@
                     </div>
                     </br><!-- closing for custom-control custom-checkbox -->
                 </div><!-- closing for top -->
-
+            </div><!-- closer for .restoftop -->
+                <div class="orderit">
                 <button type="btn" class="box" id="orderit-btn">Order it!</button>
+            </div>
+            <!-- closer for .orderit div -->
+            <div class="total">
+                <button type="text" class="btn btn-primary total-btn">TOTAL
+                    <span>$0</span>
+                </button>
+            </div> <!-- closer for .total -->
             </div><!-- closing div for orderall -->
         </div><!-- closing div for order-page -->
 
@@ -458,8 +471,13 @@
                 <div class="payup-btns">
                     <button type="submit" class="btn btn-primary" id='payup-btn'>Get my pizza</button>
                     <!-- <button type="btn" class="box" id="order-btn">Order up</button> -->
-                    <button type="text" class="btn btn-primary" id='payup-btn2'>TOTAL</button>
+                    <!-- <button type="text" class="btn btn-primary" id='payup-btn2'>TOTAL</button> -->
                 </div>
+                <div class="total">
+                    <button type="text" class="btn btn-primary total-btn">TOTAL
+                        <span>$0</span>
+                    </button>
+                </div><!-- closer for .total -->
             </div>
             <!-- closer for payup-circle  -->
             </div><!-- closer for .getmypizza -->
@@ -469,31 +487,26 @@
 <!-- CREDIT CARD INFO -->
 
 <div class="creditcard-page">
-    <div id="circle-paypage"></div>
-    <div class="pay-page">
-           <form action="" class="paythepiper">
+    <!-- <div id="circle-paypage"></div> -->
+        <div class="circle3"></div>
+        <div class="pay-page">
 
-
-
-
-
-
-
+           <form id="paythepiper">
                 <h3>Pay the piper</h3>
 
                 <div class="form-row">
                 <div class="form-group col-md-12">
                 <label for="ccn">Credit Card Number:</label>
-                <input type="text" id="ccn" class="form-control"><br>
+                <input type="text" id="ccn" name="ccn" class="form-control"><br>
                 </div>
 
                 <div class="form-group col-md-3">
-                <label for="cvc">CVC</label>
-                <input type="text" id="cvc" class="form-control">
-                <label style="font-size: .5em;">security code on back</label>
+                <label for="cvv" style="font-size: .5em; margin-bottom: 1.5em">security code on back</label>
+                <input type="text" id="cvv" name="cvv" class="form-control" placeholder="CVV">
+                <!-- <label style="font-size: .5em;">security code on back</label> -->
 
-                <br>
                 </div>
+            </form><!-- closer for .paythepiper -->
 
                 <div class="form-group col-md-5">
                 <label>Expires:</label>
@@ -526,7 +539,6 @@
                 </select>
                 </div>
                 </div><br>
-            </form><!-- closer for .paythepiper -->
 
                             <!--STREET CRED - billing info-->
 
@@ -649,9 +661,15 @@
 
             <div class="paythepiper-btns">
                 <button type="submit" class="btn btn-primary" id='paythepiper-btn'>Pay the piper!</button>
-                <!-- <button type="btn" class="box" id="order-btn">Order up</button> -->
-                <button type="text" class="btn btn-primary" id='paythepiper-btn2'>TOTAL</button>
-            </div>
+            </div>  
+              <!-- <button type="btn" class="box" id="order-btn">Order up</button> -->
+                <!-- <button type="text" class="btn btn-primary" id='paythepiper-btn2'>TOTAL</button> -->
+                <div class="total">
+                    <button type="text" class="btn btn-primary total-btn">TOTAL
+                        <span>$0</span>
+                    </button>
+                </div><!-- closer for .total -->
+            
         </div>
         <!-- closer for pay-page     -->
         </div>
@@ -675,6 +693,7 @@
     </script>
 
     <script src="/pizzaapp/js/scripts.js"></script>
+    <script src="/pizzaapp/js/scrap.js"></script>
 </body>
 
 </html>
