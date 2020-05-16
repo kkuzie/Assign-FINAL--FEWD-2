@@ -107,20 +107,51 @@ $('#other2').hide();//TEMP SHOW
 
 ///////PICK CRUST
 let crustys = document.querySelector('#crustys');
-console.log(crustys + 'this damnwell work');
-
 
 let price ;
+let type;
 let sizeprice = document.querySelector('.sizeprice');
 let hand = document.querySelector('.hand');
 let skinny = document.querySelector('.skinny');
 let ny = document.querySelector('.ny');
 let gluten = document.querySelector('.gluten');
+let  check = false;
 console.log(sizeprice);
 console.log(hand);
 console.log(skinny);
 console.log(ny);
 console.log(gluten);
+
+crustys.reset();
+// This is the the form event listener
+crustys.addEventListener("change", function(e) {
+  
+  if (e.target.value > 0 && e.target.value <=3) {
+   check = true;
+   clearFields('customRadio1') ;
+   } else if (e.target.value >3 && e.target.value <=5){
+    console.log("This is the true" + e.target.value);
+    check = true;
+    clearFields('customRadio2'); 
+  } else if (e.target.value >5 && e.target.value <=7){
+    console.log("This is the true" + e.target.value);
+    check = true;
+    clearFields('customRadio3') ;
+  } else if (e.target.value == 8){
+    check = true;
+    console.log("This is the true" + e.target.value);
+    clearFields('customRadio4') 
+   
+  } else {
+    console.log("do nothing");
+   
+   
+  }
+ 
+  // clearFields(e.target.id);
+  
+});
+
 
 
 // console.log(sizeprice.value);//returns 1 2 or 3
@@ -134,62 +165,25 @@ console.log(selected.value);
 
 // let customradio = document.querySelector('.custom-radio');
 // console.log(customradio);//only pulls #hand1st - possibly cuz others are hidden until chosen?
-crustys.reset();
+
 $("#gettherest-btn").click(function() {
   // document.querySelector(".sizeprice").onchange=function() {
   //   var val = this.value;
   //   console.log(val);
-  
-  if(hand.value == selected.value || skinny.value == selected.value || ny.value == selected.value || gluten.value == selected.value) {
-    // alert('please pick crust');
-    $('#crustys').append('<div id="choosecrust"></div>');
-    $('#choosecrust').text('Hey, hey! pick a size!');
-    // $(".order-page").hide();
-    // $(".landing-page").hide();    
-    // $('.getmypizza').show();
-  } else if (hand.value == 1){
-    let type = 'hand1';
-    clearFields(type);
-    price = 9.99;
-   console.log(price);
-   showTop(); 
-  } else if  (hand.value == 2){
-    let type = 'hand1';
-    clearFields(type);
-    price = 12.99;
-     showTop(); 
-  } else if (hand.value == 3){
-    let type = 'hand1';
-    clearFields(type);
-    price = 14.99;
-     showTop(); 
-  } else if (skinny.value == 4){
-      let type = 'skinny1';
-      clearFields(type);
-      price = 11.99;
-       showTop(); 
-  } else if (skinny.value == 5){
-        let type = 'skinny1';
-        clearFields(type);
-        price = 13.99;
-         showTop(); 
-  } else if (ny.value == 6){
-          let type = 'ny1';
-          clearFields(type);
-          price = 16.99;
-           showTop(); 
-  } else if (ny.value == 7){
-            let type = 'ny1';
-            clearFields(type);
-            price = 19.99;
-             showTop();
-  } else if (gluten.value == 8){
-              let type = 'gluten1';
-              clearFields(type);
-              price = 10.99;
-               showTop(); 
-  // (hand.value == 1 || hand.value == 2 || hand.value == 3 || skinny.value == 4 || skinny.value == 5 || ny.value == 6 || ny.value == 7 || gluten.value == 8) {
-  } 
+  console.log(check);
+  // if((hand.value == selected.value) || (skinny.value == selected.value) ||(ny.value == selected.value) || (gluten.value == selected.value)) {
+   if(check === false){
+ // alert('please pick crust');
+ $('#crustys').append('<div id="choosecrust"></div>');
+ $('#choosecrust').text('Hey, hey! pick a size!');
+
+         
+   
+          
+  } else {
+    showTop();
+  }
+ 
 });
 /////FUNCTION FOR SHOWING TOPPINGS AFTER CRUST PICKED
 function showTop() {
@@ -205,19 +199,19 @@ function showTop() {
 }
 //////FUNCTION FOR RESETTING DROPDOWN FIELDS WHEN NEW SIZE/PRICE CHOSEN
   function clearFields (type){
-    if(type === "hand1"){
+    if(type === "customRadio1"){
      document.getElementById('skinny1').selected = "true";
     document.getElementById('ny1').selected = "true";
     document.getElementById('gluten1').selected = "true";
-    } else if (type === "skinny1") {
+    } else if (type === "customRadio2") {
       document.getElementById('hand1').selected = "true";
       document.getElementById('ny1').selected = "true";
       document.getElementById('gluten1').selected = "true";
-  } else if (type === "ny1") {
+  } else if (type === "customRadio3") {
     document.getElementById('hand1').selected = "true";
     document.getElementById('skinny1').selected = "true";
     document.getElementById('gluten1').selected = "true";
-  } else if (type === "gluten1") {
+  } else if (type === "customRadio4") {
     document.getElementById('hand1').selected = "true";
     document.getElementById('skinny1').selected = "true";
     document.getElementById('ny1').selected = "true";
