@@ -18,6 +18,15 @@
 </head>
 
 <body>
+<div id='circle3total'>
+    <div class="circle3"></div>
+
+    <div class="total">
+        <button type="text" class="btn btn-primary total-btn">TOTAL
+            <span id="total">$0</span>
+        </button>
+    </div> <!-- closer for .total -->
+</div>
     <main>
         <!-- LANDING PAGE -->
 
@@ -27,7 +36,7 @@
             <img id='logo' src="/pizzaapp/images/PeppeRoni-logo.png" alt="logo">
 
             <h1>Peppe & Roni Pizza</h1>
-            <p>Giuseppe and Veronica Marini started making pizza on their first date, when they fell in love. <br>They want
+            <p>Giuseppe and Veronica Marini <br>started making pizza on their first date, <br>when they fell in love. <br>They want
                 to do the same for you.
 
             </p>
@@ -67,6 +76,7 @@
         <div class="order-page">
             <div class="circle"></div>
             <div class="circle1"></div>
+
             <div class="orderall">
                 <form id="crustys">
                     <!-- <div class="saycheese"> -->
@@ -92,11 +102,11 @@
                             <!-- Nah, not feeling it -->
                         </label>
                  
-                        <select class="custom-select hand sizeprice">
-                            <option id="hand1" value="0" selected>Tossed by hand - Select size</option>
-                            <option value="1">Little Sis 12" $9.99</option>
-                            <option value="2">Middle Child 14" $12.99</option>
-                            <option value="3">Big Brother 16" $14.99</option>
+                        <select class="custom-select hand sizeprice" id="hand0">
+                            <option id="hand1" value="0.00" selected>Tossed by hand - Select size</option>
+                            <option id="hand2" value="9.99">Little Sis 12" $9.99</option>
+                            <option id="hand3" value="12.99">Middle Child 14" $12.99</option>
+                            <option id="hand4" value="14.99">Big Brother 16" $14.99</option>
                         </select> 
                     </div> 
 
@@ -109,10 +119,10 @@
                             <!-- Yup, cheese it up! -->
                         </label>
 
-                        <select class="custom-select skinny sizeprice">
-                            <option id="skinny1" selected>Cracker thin and crunchy - Select Size</option>
-                            <option value="4">Middle Child 12" $11.99</option>
-                            <option value="5">Big Brother 14" $13.99</option>
+                        <select  class="custom-select skinny sizeprice" id="skinny0">
+                            <option id="skinny1" value="0.00" selected>Cracker thin and crunchy - Select Size</option>
+                            <option id="skinny2" value="11.99">Middle Child 12" $11.99</option>
+                            <option id="skinny3" value="13.99">Big Brother 14" $13.99</option>
                         </select>
                     </div>
 
@@ -122,10 +132,10 @@
                             <h3>i <span style="font-size:120%;color:red;">&hearts;</span> NY</h3>
                         </label>
 
-                        <select class="custom-select ny sizeprice">
-                            <option id="ny1" selected>New Yorker Style - Select Size</option>
-                            <option value="6">Big Boss 18" $16.99</option>
-                            <option  value="7">Godfather 20" $19.99</option>
+                        <select class="custom-select ny sizeprice" id="ny0">
+                            <option id="ny1" value="0.00" selected>New Yorker Style - Select Size</option>
+                            <option id="ny2" value="16.99">Big Boss 18" $16.99</option>
+                            <option  id="ny3" value="19.99">Godfather 20" $19.99</option>
                         </select>
 
                     </div>
@@ -135,16 +145,15 @@
                             <h3>Glutenless for punishment</h3>
                         </label>
 
-                        <select class="custom-select gluten sizeprice">
-                            <option id="gluten1" selected>Only one size option</option>
-                            <option value="8">Little Sis 12" $10.99</option>
+                        <select class="custom-select gluten sizeprice" id="gluten0">
+                            <option id="gluten1" value="0.00" selected>Only one size option</option>
+                            <option id="gluten2" value="10.99">Little Sis 12" $10.99</option>
                         </select>
                     </div>
                     </form>
                 </div> <!--closer for .orderall  -->
                 <!-- </div>closer for saycheese/crusts -->
                    <button type="btn" class="box" id="gettherest-btn">Get the rest!</button>
-
                 <br><br>
 
                 <!-- <div class="crust"> -->
@@ -187,10 +196,10 @@
                     <!-- <h2>Easy Cheesy</h2> -->
                     <h2>Say Cheese!</h2>
                     <select class="custom-select" name='cheeseoptions' id='cheese'>
-                        <option selected>The usual - no charge</option>
-                        <option value="ezcheese">Easy cheesy - no charge</option>
-                        <option value="alittlemore">A little more +$2.99</option>
-                        <option value="pileiton">Pile it on! +$3.99</option>
+                        <option value="0.00" selected>The usual - no charge</option>
+                        <option value="0.00">Easy cheesy - no charge</option>
+                        <option value="2.99">A little more +$2.99</option>
+                        <option value="3.99">Pile it on! +$3.99</option>
                     </select>
                 </div>
                 <!--closer for saycheese/ezcheesy-->
@@ -201,10 +210,10 @@
 
                 <div class="saucy">
                     <h2>Saucy!</h2>
-                    <select class="custom-select">
-                        <option selected>Tomato - no charge</option>
-                        <option value="1">Big tomato +$.99</option>
-                        <option value="2">BBQ +$1.99</option>
+                    <select class="custom-select" id="saucy">
+                        <option value="0.00" selected>Tomato - no charge</option>
+                        <option value="0.99">Big tomato +$.99</option>
+                        <option value="1.99">BBQ +$1.99</option>
                     </select>
                 </div>
                 <!--closer for saucy-->
@@ -212,61 +221,61 @@
                 <!-- STEP 5: 
                 Next add a checkbox group of options for toppings. Each topping is $.99 extra. You offer the following toppings: pepperoni, sausage, ham, bacon, salami, peppers, olives, jalapenos, mushrooms, pineapple, and onion. Use a checkbox list here so the user can select more than one option. -->
 
-                <div class="top">
-                    <h2>Over the top</h2>
-                    <h4>only $.99 each</h4>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <div class="top" id="toppings">
+                    <h2 id="test1">Over the top</h2>
+                    <h4 id="test2">only $.99 each</h4>
+                    <div class="custom-control custom-checkbox" id="test3">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" value="Peppe Roni">
                         <label class="custom-control-label" for="customCheck1">Peppe Roni</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                        <input type="checkbox" class="custom-control-input" id="customCheck2" value="Sausage">
                         <label class="custom-control-label" for="customCheck2">sausage</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        <input type="checkbox" class="custom-control-input" id="customCheck3" value="Ham">
                         <label class="custom-control-label" for="customCheck3">ham</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck4">
+                        <input type="checkbox" class="custom-control-input" id="customCheck4" value="Bacon">
                         <label class="custom-control-label" for="customCheck4">bacon</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck5">
+                        <input type="checkbox" class="custom-control-input" id="customCheck5" value="Salami">
                         <label class="custom-control-label" for="customCheck5">salami</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck6">
+                        <input type="checkbox" class="custom-control-input" id="customCheck6" value="Peppers">
                         <label class="custom-control-label" for="customCheck6">peppers</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck7">
+                        <input type="checkbox" class="custom-control-input" id="customCheck7" value="Olives">
                         <label class="custom-control-label" for="customCheck7">olives</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck8">
+                        <input type="checkbox" class="custom-control-input" id="customCheck8" value="Jalapenos">
                         <label class="custom-control-label" for="customCheck8">jalapenos</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck9">
+                        <input type="checkbox" class="custom-control-input" id="customCheck9" value="Shrooms">
                         <label class="custom-control-label" for="customCheck9">shrooms</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck10">
+                        <input type="checkbox" class="custom-control-input" id="customCheck10" value="Pineapple">
                         <label class="custom-control-label" for="customCheck10">pineapple</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck11">
+                        <input type="checkbox" class="custom-control-input" id="customCheck11" value="Onions">
                         <label class="custom-control-label" for="customCheck11">onions</label>
                     </div>
                     </br><!-- closing for custom-control custom-checkbox -->
@@ -276,13 +285,8 @@
                 <button type="btn" class="box" id="orderit-btn">Order it!</button>
             </div>
             <!-- closer for .orderit div -->
-            <div class="total">
-                <button type="text" class="btn btn-primary total-btn">TOTAL
-                    <span>$0</span>
-                </button>
-            </div> <!-- closer for .total -->
-            </div><!-- closing div for orderall -->
         </div><!-- closing div for order-page -->
+            </div><!-- closing div for orderall -->
 
 
         <!-- GOTTA FIND YA - delivery address -->
@@ -297,11 +301,11 @@
 
                     <div class="form-row">
                         <!--1st form-row-->
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 delname">
                             <label for="name">Name</label>
                             <input type="text" name='name' class="form-control" id="whosbuying"
                                 placeholder="Who's buying?">
-                            <div id="nameError"></div>
+                            <!-- <div id="nameError"></div> -->
                             <!--empty div for name reqd message-->
                         </div>
                         <!-- closer for form-group col-md-12 NAME-->
@@ -319,7 +323,7 @@
                     <!--closer 1st form-row-->
 
                     <!-- ??? WHY ISNT THIS IN A ROW DIV ??? -->
-                    <div class="form-group">
+                    <div class="form-group deladd">
                         <label for="inputAddress">Address</label>
                         <input type="text" name="address" class="form-control notincl" id="address"
                             placeholder="6789 End of the Road Road">
@@ -371,12 +375,12 @@
 
                     <div class="form-row">
                         <!--3rd form-row-->
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6 delcity">
                             <label for="city">City</label>
                             <input type="text" name='citytype' class="form-control" id="city">
                         </div>
 
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-4 delstate">
                             <label for="inputState">State</label>
                             <input type="text" name='statetype' id='state' class="form-control">
                             <!-- <select id="state" class="form-control">
@@ -436,7 +440,7 @@
                         </div>
                         <!-- closer for form-group col-md-4 STATE -->
 
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-2 delzip">
                             <label for="inputZip">Zip</label>
                             <input type="text" name="zip" class="form-control" id="zip">
                         </div>
@@ -446,13 +450,13 @@
                     <div class="form-row">
                         <!-- 4th form-row -->
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6 delem">
                             <label for="inputEmail">Email</label>
                             <input type="text" name="email" class="form-control" id="email"
                                 placeholder="Iam@socool.com">
                         </div>
 
-                        <div class="form-group col-md-6 foneError">
+                        <div class="form-group col-md-6 delfone">
                             <label for="inputPhone">What's your number?</label>
                             <input type="text" name='phone' class="form-control" id="fone" placeholder="555.555.5555">
                             <div class="errorFone"></div>
@@ -469,15 +473,15 @@
 
 
                 <div class="payup-btns">
-                    <button type="submit" class="btn btn-primary" id='payup-btn'>Get my pizza</button>
+                    <button type="submit" class="btn btn-primary" id='payup-btn'>pay the piper!</button>
                     <!-- <button type="btn" class="box" id="order-btn">Order up</button> -->
                     <!-- <button type="text" class="btn btn-primary" id='payup-btn2'>TOTAL</button> -->
                 </div>
-                <div class="total">
+                <!-- <div class="total">
                     <button type="text" class="btn btn-primary total-btn">TOTAL
                         <span>$0</span>
                     </button>
-                </div><!-- closer for .total -->
+                </div>closer for .total -->
             </div>
             <!-- closer for payup-circle  -->
             </div><!-- closer for .getmypizza -->
@@ -488,7 +492,6 @@
 
 <div class="creditcard-page">
     <!-- <div id="circle-paypage"></div> -->
-        <div class="circle3"></div>
         <div class="pay-page">
 
            <form id="paythepiper">
@@ -509,40 +512,45 @@
                 </div>
             </form><!-- closer for .paythepiper -->
 
-                <div class="form-group col-md-4" style="margin-top: -2em;">
+            <!-- <form id="cc"> -->
+                <form class="form-group col-md-4" id='ccmonth' style="margin-top: -2em;">
                     <label>expires:</label>
                 <select class="form-control" id="ex-month">
-                    <option value="jan">01</option>
-                    <option value="feb">02</option>
-                    <option value="mar">03</option>
-                    <option value="apr">04</option>
-                    <option value="may">05</option>
-                    <option value="jun">06</option>
-                    <option value="jul">07</option>
-                    <option value="aug">08</option>
-                    <option value="sept">09</option>
-                    <option value="oct">10</option>
-                    <option value="nov">11</option>
-                    <option value="dec">12</option>
+                    <option selected value="0">01</option>
+                    <option value="1">02</option>
+                    <option value="2">03</option>
+                    <option value="3">04</option>
+                    <option value="4">05</option>
+                    <option value="5">06</option>
+                    <option value="6">07</option>
+                    <option value="7">08</option>
+                    <option value="8">09</option>
+                    <option value="9">10</option>
+                    <option value="10">11</option>
+                    <option value="11">12</option>
                 </select>
                 <label>month</label>
+                </form>
+                <!-- closer for div #ccmonth -->
+                <br>
 
-                </div><br>
-
-                <div class="form-group col-md-4">
+                <form class="form-group col-md-4" id='ccyear'>
                 <select class="form-control" id="ex-year">
-                    <option value="2020">20</option>
-                    <option value="2015">21</option>
-                    <option value="2016">22</option>
-                    <option value="2017">23</option>
-                    <option value="2018">24</option>
-                    <option value="2019">25</option>
-                    <option value="2015">26</option>
+                    <option selected value="2020">20</option>
+                    <option value="2021">21</option>
+                    <option value="2022">22</option>
+                    <option value="2023">23</option>
+                    <option value="2024">24</option>
+                    <option value="2025">25</option>
+                    <option value="2026">26</option>
                 </select>
                 <label for="">year</label>
+                </form>
+                <!-- closer for #ccyear -->
                 </div>
-                </div><br>
-
+                <!-- closer for .pay-page -->
+                <br>
+            <!-- </form> -->
                             <!--STREET CRED - billing info-->
 
                             <form id='streetcred'>
@@ -565,11 +573,11 @@
             
                                 <div class="form-row">
                                     <!--1st form-row-->
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group col-md-12 delname2">
                                         <label for="name2">Name</label>
                                         <input type="text" name="name" class="form-control" id="whosbuying2"
                                             placeholder="Who's buying?">
-                                        <div id="nameError2"></div>
+                                        <!-- <div id="nameError2"></div> -->
                                         <!--empty div for name reqd message-->
                                     </div>
                                     <!-- closer for form-group col-md-12 NAME2-->
@@ -602,7 +610,7 @@
                                 <div class="form-row">
                                     <!--2nd form-row-->
             
-                                    <div class="form-group col-md-8">
+                                    <div class="form-group col-md-8 deladd2">
                                         <label for="inputAddress2">Address</label>
                                         <input type="text" name="address" class="form-control notincl" id="address2"
                                             placeholder="6789 End of the Road Road">
@@ -626,18 +634,18 @@
             
                                 <div class="form-row">
                                     <!--3rd form-row-->
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-6 delcity2">
                                         <label for="city2">City</label>
                                         <input type="text" name="citytype" class="form-control" id="city2">
                                     </div>
             
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-4 delstate2">
                                         <label for="inputState">State</label>
                                         <input type="text" name='statetype' id='state2' class="form-control">
                                     </div>
                                     <!-- closer for form-group col-md-4 STATE -->
             
-                                    <div class="form-group col-md-2">
+                                    <div class="form-group col-md-2 delzip2">
                                         <label for="zip2">Zip</label>
                                         <input type="text" name="zip" class="form-control" id="zip2">
                                     </div>
@@ -663,15 +671,15 @@
                             <!--closer for #streetcred-->
 
             <div class="paythepiper-btns">
-                <button type="submit" class="btn btn-primary" id='paythepiper-btn'>Pay the piper!</button>
+                <button type="submit" class="btn btn-primary" id='paythepiper-btn'>get my pizza!</button>
             </div>  
               <!-- <button type="btn" class="box" id="order-btn">Order up</button> -->
                 <!-- <button type="text" class="btn btn-primary" id='paythepiper-btn2'>TOTAL</button> -->
-                <div class="total">
+                <!-- <div class="total">
                     <button type="text" class="btn btn-primary total-btn">TOTAL
                         <span>$0</span>
                     </button>
-                </div><!-- closer for .total -->
+                </div>closer for .total -->
             
         </div>
         <!-- closer for pay-page     -->
@@ -683,6 +691,26 @@
         </>
         <!-- closer for .payup-circle -->
     </main>
+    <!-- Contact us Button and form Starts Here -->
+    <div id="confirm" style="overflow:hidden;">
+        <div id="confirm_form">
+            <!-- Popup Div Starts Here -->
+            <div id="popup">
+                <!-- Contact Us Form -->
+                <!-- <form action="#" id="form" method="post" name="form"> -->
+                    <!-- <img id="close" src="/pizzaapp/images/closing x.svg"> -->
+                    <h2>are ya sure?</h2>
+                    <button id="yup-btn">yup</button>
+                    <button id="nope-btn">nope</button>
+                    <!-- <hr>
+                        <a href="kfboger@sdccd.edu" id="submit">Send</a> -->
+                <!-- </form> -->
+            </div>
+            <!-- Popup Div Ends Here -->
+        </div>
+    </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -695,8 +723,9 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 
-    <script src="/pizzaapp/js/scripts.js"></script>
-    <script src="/pizzaapp/js/scrap.js"></script>
+    <!-- <script src="/pizzaapp/js/scripts.js"></script>
+    <script src="/pizzaapp/js/scrap.js"></script> -->
+    <script src="/pizzaapp/js/testscript.js"></script>
 </body>
 
 </html>
