@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/pizzaapp/finalstyles.css">
+
+    <title>Pizza App Final</title>
+</head>
+
+<body>
+    <div id='circle3total'>
+        <div class="circle3"></div>
+
+        <div class="total">
+            <button type="text" class="btn btn-primary total-btn">TOTAL
+                <span id="total">$0</span>
+            </button>
+        </div> <!-- closer for .total -->
+    </div>
+    <main>
+        <!-- LANDING PAGE -->
+
+        <div class="landing-page">
+            <div id="pizza-home">
+                <img id='logo' src="/pizzaapp/images/PeppeRoni-logo.png" alt="logo">
+
+                <h1>Peppe & Roni Pizza</h1>
+                <p>Giuseppe and Veronica Marini <br>started making pizza on their first date, <br>when they fell in
+                    love. <br>They want
+                    to do the same for you.
+
+                </p>
+            </div>
+            <!-- closer for pizza-home -->
+            <div class="landing-btns">
+                <button type="btn" class="box" id="craving-btn">Cravings
+                </button>
+                <button type="btn" class="box" id="order-btn">Order up</button>
+                <button type="btn" class="box" id="findus-btn">find us</button>
+            </div>
+        </div>
+
+
+        <!-- ORDER PAGE -->
+
+        <div class="order-page">
+            <div class="circle"></div>
+            <div class="circle1"></div>
+
+            <div class="orderall">
+                <form id="crustys">
+                    <h2>Crusts</h2>
+
+                    <!-- RADIO BUTTONS & DROPDOWNS for crust -->
+
+                    <div class="custom-control custom-radio" id='hand1st'>
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label hand1st" for="customRadio1">
+                            <h3>By the hand...</h3>
+                        </label>
+
+                        <select class="custom-select hand sizeprice" id="hand0">
+                            <option id="hand1" value="0.00" selected>Tossed by hand - Select size</option>
+                            <option id="hand2" value="9.99">Little Sis 12" $9.99</option>
+                            <option id="hand3" value="12.99">Middle Child 14" $12.99</option>
+                            <option id="hand4" value="14.99">Big Brother 16" $14.99</option>
+                        </select>
+                    </div><!--closer for hand1st-->
+
+                    <div class="custom-control custom-radio" id="skinny1st">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio2">
+                            <h3>Skinny dippin</h3>
+                        </label>
+
+                        <select class="custom-select skinny sizeprice" id="skinny0">
+                            <option id="skinny1" value="0.00" selected>Cracker thin and crunchy - Select Size</option>
+                            <option id="skinny2" value="11.99">Middle Child 12" $11.99</option>
+                            <option id="skinny3" value="13.99">Big Brother 14" $13.99</option>
+                        </select>
+                    </div>
+
+                    <div class="custom-control custom-radio" id="ny1st">
+                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio3">
+                            <h3>i <span style="font-size:120%;color:red;">&hearts;</span> NY</h3>
+                        </label>
+
+                        <select class="custom-select ny sizeprice" id="ny0">
+                            <option id="ny1" value="0.00" selected>New Yorker Style - Select Size</option>
+                            <option id="ny2" value="16.99">Big Boss 18" $16.99</option>
+                            <option id="ny3" value="19.99">Godfather 20" $19.99</option>
+                        </select>
+
+                    </div>
+                    <div class="custom-control custom-radio" id="gluten1st">
+                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio4">
+                            <h3>Glutenless for punishment</h3>
+                        </label>
+
+                        <select class="custom-select gluten sizeprice" id="gluten0">
+                            <option id="gluten1" value="0.00" selected>Only one size option</option>
+                            <option id="gluten2" value="10.99">Little Sis 12" $10.99</option>
+                        </select>
+                    </div>
+                </form>
+            </div> <!--closer for .orderall  -->
+            <button type="btn" class="box" id="gettherest-btn">Get the rest!</button>
+            <br><br>
+
+            <div class="restoftop">
+                <div class="saycheese">
+                    <h2>Say Cheese!</h2>
+                    <select class="custom-select" name='cheeseoptions' id='cheese'>
+                        <option value="0.00" selected>The usual - no charge</option>
+                        <option value="0.00">Easy cheesy - no charge</option>
+                        <option value="2.99">A little more +$2.99</option>
+                        <option value="3.99">Pile it on! +$3.99</option>
+                    </select>
+                </div> <!--closer for saycheese/ezcheesy-->
+                <br><br>
+
+                <div class="saucy">
+                    <h2>Saucy!</h2>
+                    <select class="custom-select" id="saucy">
+                        <option value="0.00" selected>Tomato - no charge</option>
+                        <option value="0.99">Big tomato +$.99</option>
+                        <option value="1.99">BBQ +$1.99</option>
+                    </select>
+                </div> <!--closer for saucy-->
+                <br><br>
+
+                <div class="top" id="toppings">
+                    <h2 id="test1">Over the top</h2>
+                    <h4 id="test2">only $.99 each</h4>
+                    <div class="custom-control custom-checkbox" id="test3">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" value="Peppe Roni">
+                        <label class="custom-control-label" for="customCheck1">Peppe Roni</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck2" value="Sausage">
+                        <label class="custom-control-label" for="customCheck2">sausage</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck3" value="Ham">
+                        <label class="custom-control-label" for="customCheck3">ham</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck4" value="Bacon">
+                        <label class="custom-control-label" for="customCheck4">bacon</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck5" value="Salami">
+                        <label class="custom-control-label" for="customCheck5">salami</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck6" value="Peppers">
+                        <label class="custom-control-label" for="customCheck6">peppers</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck7" value="Olives">
+                        <label class="custom-control-label" for="customCheck7">olives</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck8" value="Jalapenos">
+                        <label class="custom-control-label" for="customCheck8">jalape&#241;os</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck9" value="Shrooms">
+                        <label class="custom-control-label" for="customCheck9">'shrooms</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck10" value="Pineapple">
+                        <label class="custom-control-label" for="customCheck10">pineapple</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck11" value="Onions">
+                        <label class="custom-control-label" for="customCheck11">onions</label>
+                    </div>
+                    </br><!-- closing for custom-control custom-checkbox -->
+                </div><!-- closing for top -->
+            </div><!-- closer for .restoftop -->
+            <div class="orderit">
+                <button type="btn" class="box" id="orderit-btn">Order it!</button>
+            </div><!-- closer for .orderit div -->
+        </div><!-- closing div for order-page -->
+        </div><!-- closing div for orderall -->
+
+
+        <!-- GOTTA FIND YA - delivery address -->
+        <div class="getmypizza">
+            <!-- encapsulates gottafindya and streetcreds  -->
+            <div class="circle2"></div>
+
+            <div class="payup-circle">
+                <form id='gottafindya'>
+                    <h3>Gotta find ya!</h3>
+
+                    <div class="form-row">
+                        <!--1st form-row-->
+                        <div class="form-group col-md-12 delname">
+                            <label for="name">Name</label>
+                            <input type="text" name='name' class="form-control" id="whosbuying"
+                                placeholder="Who's buying?">
+                        </div> <!-- closer for form-group col-md-12 NAME-->
+                    </div><!--closer 1st form-row-->
+
+                    <!-- ??? WHY ISNT THIS IN A ROW DIV ??? -->
+                    <div class="form-group deladd">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" name="address" class="form-control notincl" id="address"
+                            placeholder="6789 End of the Road Road">
+                    </div>
+
+                    <div class="form-row"> <!--2nd form-row-->
+                        <div class="form-group col-md-6">
+                            <label for="apt-ste">apt/ste number</label>
+                            <input type="text" name='apt' class="form-control notincl" id="apt-ste-num">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="dwelling-type">Dwelling type</label>
+                            <select id="dwelling" class="form-control notincl">
+                                <option value="House">House</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="Business">Business</option>
+                                <option value="Campus">Campus</option>
+                                <option value="Hotel">Hotel</option>
+                                <option value="Dorm">Dorm</option>
+                                <option value="Other...">Other...</option>
+                            </select>
+
+                            <div class="hiddenother" id="other">
+                                <label for="dwelling-input">So whatcha live in?</label>
+                                <input type="text" name='dwellingtype' id="dwellinginput" class="form-control notincl">
+                            </div><!--closer for .hiddenother-->
+                        </div><!--closer for Dwelling type class div-->
+                    </div><!--closer for 2nd form-row-->
+
+                    <div class="form-row"><!--3rd form-row-->
+                        <div class="form-group col-md-6 delcity">
+                            <label for="city">City</label>
+                            <input type="text" name='citytype' class="form-control" id="city">
+                        </div>
+
+                        <div class="form-group col-md-4 delstate">
+                            <label for="inputState">State</label>
+                            <input type="text" name='statetype' id='state' class="form-control">
+                        </div><!-- closer for form-group col-md-4 STATE -->
+
+                        <div class="form-group col-md-2 delzip">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" name="zip" class="form-control" id="zip">
+                        </div>
+                    </div><!--closer for 3rd form-row-->
+
+                    <div class="form-row"><!-- 4th form-row -->
+                        <div class="form-group col-md-6 delem">
+                            <label for="inputEmail">Email</label>
+                            <input type="text" name="email" class="form-control" id="email"
+                                placeholder="Iam@socool.com">
+                        </div>
+
+                        <div class="form-group col-md-6 delfone">
+                            <label for="inputPhone">What's your number?</label>
+                            <input type="text" name='phone' class="form-control" id="fone" placeholder="9876543210">
+                            <div class="errorFone"></div>
+
+                        </div>
+                    </div><!--closer 4thform-row-->
+                </form><!--closer for #gottafindya-->
+                <br><br>
+
+                <div class="payup-btns">
+                    <button type="submit" class="btn btn-primary" id='payup-btn'>pay the piper!</button>
+                </div>        
+            </div><!-- closer for payup-circle  -->
+        </div><!-- closer for .getmypizza -->
+        <br><br>
+
+        <!-- CREDIT CARD INFO -->
+
+        <div class="creditcard-page">
+            <div class="pay-page">
+
+                <form id="paythepiper">
+                    <h3>Pay the piper</h3>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12 delccn">
+                            <label for="ccn">Credit Card Number:</label>
+                            <input type="text" id="ccn" name="ccn" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4 delcvv">
+                            <input type="text" id="cvv" name="cvv" class="form-control" placeholder="CVV">
+                            <label for="cvv" style="font-size: .7em; margin-bottom: 1.5em">security code on back</label>
+                        </div>
+                </form><!-- closer for .paythepiper -->
+
+                <form class="form-group col-md-4 delmo" id='ccmonth' style="margin-top: -2em;">
+                    <label>expires:</label>
+                    <select class="form-control" id="ex-month">
+                        <option selected value="0">01</option>
+                        <option value="1">02</option>
+                        <option value="2">03</option>
+                        <option value="3">04</option>
+                        <option value="4">05</option>
+                        <option value="5">06</option>
+                        <option value="6">07</option>
+                        <option value="7">08</option>
+                        <option value="8">09</option>
+                        <option value="9">10</option>
+                        <option value="10">11</option>
+                        <option value="11">12</option>
+                    </select>
+                    <label class='moyrgap'>month</label>
+                </form>
+                <br>
+
+                <form class="form-group col-md-4 delyr" id='ccyear'>
+                    <select class="form-control" id="ex-year">
+                        <option selected value="2020">20</option>
+                        <option value="2021">21</option>
+                        <option value="2022">22</option>
+                        <option value="2023">23</option>
+                        <option value="2024">24</option>
+                        <option value="2025">25</option>
+                        <option value="2026">26</option>
+                    </select>
+                    <label class="moyrgap" for="">year</label>
+                </form><!-- closer for #ccyear -->
+            </div><!-- closer for row cvv mo yr -->
+
+            <div class="form-row"><!--1st form-row-->
+                <div class="form-group col-md-12 delname2">
+                    <label for="name2">Name</label>
+                    <input type="text" name="name" class="form-control" id="whosbuying2"
+                        placeholder="Name as appears on your card">
+                </div> <!-- closer for form-group col-md-12 delname2-->
+            </div> <!-- closer for .pay-page -->
+            <br>
+
+            <form id='streetcred'>
+                <h3>STREET CRED</h3>
+
+                <div class="form-group">
+                    <div class="form-check dup">
+                        <input class="form-check-input" type="checkbox" id="dup">
+                        <label class="form-check-label" for="sameaswhere-checkbox">
+                            Street cred same as where we find ya?
+                            <h6>(billing same as delivery address?)</h6>
+                        </label>
+                    </div>
+                </div> <!-- closer for form-group  CHECKBOX-->
+        </div> <!--closer 1st form-row-->
+
+        <div class="form-row"><!--2nd form-row-->
+
+            <div class="form-group col-md-8 deladd2">
+                <label for="inputAddress2">Address</label>
+                <input type="text" name="address" class="form-control notincl" id="address2"
+                    placeholder="6789 End of the Road Road">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="apt-ste">apt/ste number</label>
+                <input type="text" class="form-control notincl" id="apt-ste-num2">
+            </div>
+        </div>  <!--closer for 2nd form-row-->
+
+        <div class="form-row"><!--3rd form-row-->
+            <div class="form-group col-md-6 delcity2">
+                <label for="city2">City</label>
+                <input type="text" name="citytype" class="form-control" id="city2">
+            </div>
+
+            <div class="form-group col-md-4 delstate2">
+                <label for="inputState">State</label>
+                <input type="text" name='statetype' id='state2' class="form-control">
+            </div> <!-- closer for form-group col-md-4 delstate2 -->
+
+            <div class="form-group col-md-2 delzip2">
+                <label for="zip2">Zip</label>
+                <input type="text" name="zip" class="form-control" id="zip2">
+            </div>
+        </div><!--closer for 3rd form-row-->
+        <br><br>
+        
+        </form><!--closer for #streetcred-->
+        
+        <div class="paythepiper-btns">
+            <button type="submit" class="btn btn-primary" id='paythepiper-btn'>get my pizza!</button>
+        </div>
+        </div><!-- closer for pay-page     -->
+        </div> <!-- closer for creditcard-page  -->
+       
+        <!-- END CREDIT CARD INFO -->
+
+        <!-- closer for .payup-circle -->
+    </main>
+    <!-- Confirm order Button Starts Here -->
+    <div id="confirm" style="overflow:hidden;">
+        <div id="confirm_form">
+            <!-- Popup Div Starts Here -->
+            <div id="popup">
+                <h2>are ya sure?</h2>
+                <button id="yup-btn">yup</button>
+                <button id="nope-btn">nope</button>
+            </div>
+            <!-- Popup Div Ends Here -->
+        </div>
+    </div>
+
+    <!-- ORDER COMPLETE POPUP -->
+    <div id="complete" style="overflow:hidden;">
+        <div id="complete_form">
+            <!-- Popup Div Starts Here -->
+            <div id="popup2">
+                <h3>Your food is a-coming!</h3>
+                <h3>Hope you fall in <span style="font-size:150%;color:red;">&nbsp;&hearts;</span></h3>
+                <br>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~Peppe & Roni</h4>
+            </div>
+            <!-- Popup Div Ends Here -->
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <!-- <script src="/pizzaapp/js/scripts.js"></script>
+    <script src="/pizzaapp/js/scrap.js"></script> -->
+    <script src="/pizzaapp/js/finalscripts.js"></script>
+</body>
+
+</html>
