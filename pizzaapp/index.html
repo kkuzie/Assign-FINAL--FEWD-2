@@ -458,7 +458,7 @@
 
                         <div class="form-group col-md-6 delfone">
                             <label for="inputPhone">What's your number?</label>
-                            <input type="text" name='phone' class="form-control" id="fone" placeholder="555.555.5555">
+                            <input type="text" name='phone' class="form-control" id="fone" placeholder="9876543210">
                             <div class="errorFone"></div>
 
                         </div>
@@ -497,13 +497,16 @@
            <form id="paythepiper">
                 <h3>Pay the piper</h3>
 
+
                 <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-12 delccn">
                 <label for="ccn">Credit Card Number:</label>
-                <input type="text" id="ccn" name="ccn" class="form-control"><br>
+                <input type="text" id="ccn" name="ccn" class="form-control">
+                </div>
                 </div>
 
-                <div class="form-group col-md-4">
+                <div class="form-row">
+                    <div class="form-group col-md-4 delcvv">
                 <input type="text" id="cvv" name="cvv" class="form-control" placeholder="CVV">                
                 <label for="cvv" style="font-size: .7em; margin-bottom: 1.5em">security code on back</label>
 
@@ -513,11 +516,11 @@
             </form><!-- closer for .paythepiper -->
 
             <!-- <form id="cc"> -->
-                <form class="form-group col-md-4" id='ccmonth' style="margin-top: -2em;">
+                <form class="form-group col-md-4 delmo" id='ccmonth' style="margin-top: -2em;">
                     <label>expires:</label>
                 <select class="form-control" id="ex-month">
                     <option selected value="0">01</option>
-                    <option value="1">02</option>
+                    <option  value="1">02</option>
                     <option value="2">03</option>
                     <option value="3">04</option>
                     <option value="4">05</option>
@@ -529,12 +532,12 @@
                     <option value="10">11</option>
                     <option value="11">12</option>
                 </select>
-                <label>month</label>
+                <label class='moyrgap'>month</label>
                 </form>
                 <!-- closer for div #ccmonth -->
                 <br>
 
-                <form class="form-group col-md-4" id='ccyear'>
+                <form class="form-group col-md-4 delyr" id='ccyear'>
                 <select class="form-control" id="ex-year">
                     <option selected value="2020">20</option>
                     <option value="2021">21</option>
@@ -544,9 +547,23 @@
                     <option value="2025">25</option>
                     <option value="2026">26</option>
                 </select>
-                <label for="">year</label>
+                <label class="moyrgap" for="">year</label>
                 </form>
                 <!-- closer for #ccyear -->
+        </div>
+        <!-- closer for row cvv mo yr -->
+
+        <div class="form-row">
+            <!--1st form-row-->
+            <div class="form-group col-md-12 delname2">
+                <label for="name2">Name</label>
+                <input type="text" name="name" class="form-control" id="whosbuying2"
+                    placeholder="Name as appears on your card">
+                <!-- <div id="nameError2"></div> -->
+                <!--empty div for name reqd message-->
+            </div>
+            <!-- closer for form-group col-md-12 NAME2-->
+
                 </div>
                 <!-- closer for .pay-page -->
                 <br>
@@ -571,15 +588,15 @@
                                 </div>
                                 <!-- closer for form-group  CHECKBOX-->
             
-                                <div class="form-row">
+                                <!-- <div class="form-row"> -->
                                     <!--1st form-row-->
-                                    <div class="form-group col-md-12 delname2">
+                                    <!-- <div class="form-group col-md-12 delname2">
                                         <label for="name2">Name</label>
                                         <input type="text" name="name" class="form-control" id="whosbuying2"
-                                            placeholder="Who's buying?">
+                                            placeholder="Who's buying?"> -->
                                         <!-- <div id="nameError2"></div> -->
                                         <!--empty div for name reqd message-->
-                                    </div>
+                                    <!-- </div> -->
                                     <!-- closer for form-group col-md-12 NAME2-->
             
                                     <!-- <div class="form-group col-md-6">
@@ -691,20 +708,28 @@
         </>
         <!-- closer for .payup-circle -->
     </main>
-    <!-- Contact us Button and form Starts Here -->
+    <!-- Confirm order Button Starts Here -->
     <div id="confirm" style="overflow:hidden;">
         <div id="confirm_form">
             <!-- Popup Div Starts Here -->
             <div id="popup">
-                <!-- Contact Us Form -->
-                <!-- <form action="#" id="form" method="post" name="form"> -->
-                    <!-- <img id="close" src="/pizzaapp/images/closing x.svg"> -->
                     <h2>are ya sure?</h2>
                     <button id="yup-btn">yup</button>
                     <button id="nope-btn">nope</button>
-                    <!-- <hr>
-                        <a href="kfboger@sdccd.edu" id="submit">Send</a> -->
-                <!-- </form> -->
+            </div>
+            <!-- Popup Div Ends Here -->
+        </div>
+    </div>
+
+    <!-- ORDER COMPLETE POPUP -->
+    <div id="complete" style="overflow:hidden;">
+        <div id="complete_form">
+            <!-- Popup Div Starts Here -->
+            <div id="popup2">
+                    <h3>Your food is a-coming!</h3>
+                    <h3>Hope you fall in <span style="font-size:150%;color:red;">&nbsp;&hearts;</span></h3>
+                    <br>
+                    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~Peppe & Roni</h4>
             </div>
             <!-- Popup Div Ends Here -->
         </div>
