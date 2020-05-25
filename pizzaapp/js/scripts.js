@@ -369,26 +369,75 @@ paythepiperInputs.forEach((input) => {
 
 });//closer for gottafindyaInputs.forEach()
 
+
+
+/////////DUPLICATE DELIVERY ADDRESS to BILLING when checked
+
+$('#dup').click(function() {
+  "use strict";
+    $('#whosbuying2').val($('#whosbuying').val());
+    $('#address2').val($('#address').val());
+    $('#apt-ste-num2').val($('#apt-ste-num').val());
+    $('#city2').val($('#city').val());
+    $('#state2').val($('#state').val());
+    $('#zip2').val($('#zip').val());
+});
+});//closing document ready
+
+////////EXPIRATION DATE INPUT
+// Get todays date and year
+const today = new Date();
+const todayyear = today.getFullYear();
+const todaymonth = today.getMonth();
+
 ////VALIDATE EXPIRY DATE FOR CC
-let exmonth = document.querySelector('#ex-month');
-let exyear = document.querySelector('#ex-year');
-// let cc = document.getElementById('cc');
+let mo = 0;
+let yr = 2020;
 
-  const month = exmonth.value;
-  const year = exyear.value;
-  console.log(month);//1 wh
-  console.log(year);//2020 wh
+function checkDate() {
+    if (mo < todaymonth && yr == todayyear) {
+        console.log('expired');
+    } else {
+        console.log('cool');
+    }
+}
 
-  const exdate = month + year;
-  console.log(exdate);//2020-1
-  const today = new Date();
-  const todayyear = today.getFullYear();
-  const todaymonth = today.getMonth();
-  // console.log((today.getFullYear()) + '-' + (today.getMonth()));
-  // console.log(today);//Mon May 17 2020 00:00:00 GMT-0700 (Pacific Daylight Time)
-console.log(todayyear);//2020 gr
-console.log(todaymonth);//4 gr
-console.log(todayyear.toString());//2020 wh
+$('#ccmonth').click(e => {
+    $('#ccmonth').change(e => {
+        mo = e.target.value;
+    })
+    mo = e.target.value;
+    checkDate()
+});
+
+$('#ex-year').click(e => {
+    $('#ex-year').change(e => {
+        yr = e.target.value;
+    })
+    yr = e.target.value;
+    checkDate()
+});
+
+////VALIDATE EXPIRY DATE FOR CC
+// let exmonth = document.querySelector('#ex-month');
+// let exyear = document.querySelector('#ex-year');
+// // let cc = document.getElementById('cc');
+
+//   const month = exmonth.value;
+//   const year = exyear.value;
+//   console.log(month);//1 wh
+//   console.log(year);//2020 wh
+
+//   const exdate = month + year;
+//   console.log(exdate);//2020-1
+//   const today = new Date();
+//   const todayyear = today.getFullYear();
+//   const todaymonth = today.getMonth();
+//   // console.log((today.getFullYear()) + '-' + (today.getMonth()));
+//   // console.log(today);//Mon May 17 2020 00:00:00 GMT-0700 (Pacific Daylight Time)
+// console.log(todayyear);//2020 gr
+// console.log(todaymonth);//4 gr
+// console.log(todayyear.toString());//2020 wh
 
 
 // $('#paythepiper-btn').on('click', e => {
@@ -452,19 +501,3 @@ console.log(todayyear.toString());//2020 wh
 	// 	dateError.innerHTML = '';
 	// }
 // }
-
-
-/////////DUPLICATE DELIVERY ADDRESS to BILLING when checked
-
-$('#dup').click(function() {
-  "use strict";
-    $('#whosbuying2').val($('#whosbuying').val());
-    $('#address2').val($('#address').val());
-    $('#apt-ste-num2').val($('#apt-ste-num').val());
-    $('#city2').val($('#city').val());
-    $('#state2').val($('#state').val());
-    $('#zip2').val($('#zip').val());
-});
-});//closing document ready
-
-
