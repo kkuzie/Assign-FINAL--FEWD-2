@@ -132,7 +132,7 @@ main {
 }
 
 /* POPUP  */
-#confirm_form {
+#confirm_form, #complete_form {
     width: 500px;
     height:500px;
     border-radius: 50%;
@@ -145,23 +145,29 @@ main {
     background-color:midnightblue;
     /* overflow:auto; */
     }
-    div#popup {
+    div#popup, div#popup2 {
         position:absolute;
         left:55%;
         top:30%;
         margin-left:-140px;
+    }
+        div#popup {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
         }
+        div#popup2 {
+            margin-left: -220px;
+        }
         #popup h2 {
             grid-column: 1/3;
         }
+        
     
 
 /* CIRCLES */
 .circle {
-    background-color:  rgb(177, 136, 107);
+    background-color:  rgb(91, 62, 48);
     /* width:1155px;
     height: 1155px; */
     width:750px;
@@ -185,7 +191,7 @@ main {
     border-radius: 50%; */
 }
 .circle1 {
-    background-color:  rgb(177, 136, 107);
+    background-color:  rgb(91, 62, 48);
     width:750px;
     height: 750px;
     opacity: .5;
@@ -195,12 +201,12 @@ main {
     margin-left: -300px;
 }
 .circle2 {
-    background-color:  rgb(177, 136, 107);
+    background-color:  rgb(91, 62, 48);
     width:750px;
     height: 750px;
     /* margin: -650px auto auto -850px; */
         /* margin: -350px auto auto -250px; */
-    opacity: .5;
+    opacity: .6;
     border-radius: 50%;
     position: absolute;
     /* top: -4px; */
@@ -208,7 +214,7 @@ main {
 
 }
 .circle3 {
-    background-color:  rgb(177, 136, 107);
+    background-color:  rgb(91, 62, 48);
     width:750px;
     height: 750px;
     opacity: .5;
@@ -231,12 +237,29 @@ main {
     width: 100px;
     height: 100px; */
 }
-.error {
+.error, #error2 {
     color: red;
     /* background: rgba(255,235,205,.6); */
-    border-radius: 3px;
+    /* border-radius: 3px; */
     /* font-size: 1.5em; */
 }
+#paythepiper > div:nth-child(3) {
+    margin-top: 16px;
+   }
+   div.col-md-4:nth-child(1) > label:nth-child(2) {
+    margin-bottom: 0 !important;
+   }
+   .moyrgap {
+       margin-bottom: 0;
+   }
+      
+/* #paythepiper > div:nth-child(4) {
+    margin-top: 16px;
+ }
+   div.col-md-4:nth-child(1) > label:nth-child(2) {
+    margin-bottom: 1.5em;
+} */
+      
 .invalid {
     border: 3px solid crimson !important;
     box-shadow: 0 0 0 .2rem rgba(220,20,60,.25);
