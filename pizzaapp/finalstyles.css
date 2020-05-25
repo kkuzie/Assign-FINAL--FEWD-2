@@ -1,0 +1,275 @@
+body {
+    font-family: 'Delius Unicase', cursive;
+    background: url("/pizzaapp/images/pontevecchioblu.jpeg") fixed;
+    background-color: tan; 
+    color: rgb(228, 208, 195);
+    overflow-x: hidden;
+}
+main {
+    width: 960px;
+    margin: auto;
+}
+select {
+    font-family: 'Delius Unicase', cursive;
+}
+
+/* BUTTONS */
+.total {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    position: fixed;
+}
+.total-btn {
+    grid-column: 12 / 13;
+    top: 300px;
+    position: absolute;
+}
+.box, .btn {
+    border: none !important;
+}
+.landing-btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    left: 50px;
+    position: relative;
+}
+#craving-btn {
+    grid-row: 1;
+}
+#order-btn {
+    grid-row: 1;
+}
+#order-btn:hover {
+    background-color: midnightblue;
+    opacity: .8;
+}
+.btn-primary:hover {
+    color: rgb(228, 208, 195);
+    background-color: midnightblue;
+}
+#craving-btn, #order-btn, #findus-btn, #orderit-btn, #gettherest-btn, #payup-btn, #paythepiper-btn
+{
+    background-color: midnightblue;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    color: rgb(230, 195, 170);
+    font-size: 2em;
+}
+#orderit-btn {
+    top: -50px;
+    left: 300px;
+}
+#gettherest-btn {
+    left: 300px;
+}
+#payup-btn2, #paythepiper-btn2, .total-btn, #yup-btn, #nope-btn {
+    background-color: midnightblue;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    color: blanchedalmond;
+    font-size: 1em;
+}
+.payup-btns, .paythepiper-btns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+#yup-btn, #nope-btn {
+    color: midnightblue;
+    background-color: blanchedalmond;
+    border: none;
+}
+#yup-btn {
+    grid-column: 1/2;
+    bottom: 35px;
+    left: 70px;
+}
+#nope-btn {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    left: 70px;
+}
+/* OVERWRITES */
+.btn.focus, .btn:focus, .button-primary.focus, .button-primary:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus, *.box:focus,
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: none;
+    outline: none;
+}
+F
+
+/* POPUP  */
+#confirm_form, #complete_form {
+    width: 500px;
+    height:500px;
+    border-radius: 50%;
+    margin: 0 auto;
+    opacity:.9;
+    top:20%;
+    left:35%;
+    position:fixed;
+    background-color:midnightblue;
+    }
+div#popup, div#popup2 {
+    position:absolute;
+    left:55%;
+    top:30%;
+    margin-left:-140px;
+F}
+div#popup {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    }
+div#popup2 {
+    margin-left: -220px;
+}
+#popup h2 {
+    grid-column: 1/3;
+}
+   
+
+/* CIRCLES */
+.circle {
+    background-color:  rgb(91, 62, 48);
+    width:750px;
+    height: 750px;
+    opacity: .5;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: -600px;
+}
+.circle1 {
+    background-color:  rgb(91, 62, 48);
+    width:750px;
+    height: 750px;
+    opacity: .5;
+    border-radius: 50%;
+    position: absolute;
+    top: 150px;
+    margin-left: -300px;
+}
+.circle2 {
+    background-color:  rgb(91, 62, 48);
+    width:750px;
+    height: 750px;
+    opacity: .6;
+    border-radius: 50%;
+    position: absolute;
+}
+.circle3 {
+    background-color:  rgb(91, 62, 48);
+    width:750px;
+    height: 750px;
+    opacity: .5;
+    border-radius: 50%;
+    position: absolute;
+    left: 900px;
+}
+.payup-circle {
+    position: relative;
+}
+
+
+/* ERROR MESSAGES */
+#choosecrust {
+    color: red;
+    border-radius: 3px;
+    font-size: 1.5em;
+}
+.error, #error2 {
+    color: red;
+}
+#paythepiper > div:nth-child(3) {
+    margin-top: 16px;
+   }
+div.col-md-4:nth-child(1) > label:nth-child(2) {
+    margin-bottom: 0 !important;
+}
+.moyrgap {
+       margin-bottom: 0;
+}
+.invalid {
+    border: 3px solid crimson !important;
+    box-shadow: 0 0 0 .2rem rgba(220,20,60,.25);
+}
+.invalid:focus {
+    box-shadow: 0 0 0 .2rem rgba(220,20,60,.25);
+}
+
+
+/* LANDING PAGE */
+#pizza-home {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+} 
+#logo {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    grid-column: 2/3;
+}
+#pepperoni {
+    width: 1100px;
+    height: auto;
+    position: absolute;
+    top: -450px;
+    left: -80px;
+}
+h1 {
+    font-size: 5em;
+    text-align: center;
+    color: rgb(228, 208, 195);
+    grid-row: 2;
+    grid-column: 1/4;
+}
+p {
+    font-size: 1.5em;
+    padding: 40px;
+    color: rgb(228, 208, 195);
+    grid-column: 1/4;
+    grid-row: 3;
+    text-align: center;
+}
+
+/* ORDER PAGE */
+.orderall {
+    padding-top: 100px;
+    position: relative;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+}
+.restoftop {
+    position: relative;
+}
+
+.custom-select:focus {
+    border-color: midnightblue;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.5);
+}
+.order-page, .getmypizza, .creditcard-page {
+    width: 500px;
+    margin: 0 auto;
+}
+/*GOTTAFINDYA ADDRESS  PAGE*/
+.form-control:focus {
+    border-color: midnightblue;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.5);
+}
+
+/* PAYUP PAGE */
+.pay-page {
+    position: relative;
+}
+
