@@ -125,7 +125,7 @@ div#popup, div#popup2 {
     left:55%;
     top:30%;
     margin-left:-140px;
-F}
+}
 div#popup {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
