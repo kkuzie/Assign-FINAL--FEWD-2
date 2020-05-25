@@ -6,6 +6,8 @@ $('.circle3').hide();
 $('.order-page').hide();//TEMP SHOWING
 $('.getmypizza').hide();//TEMP SHOWING
 $('.creditcard-page').hide();
+$('#complete_form').hide();
+
 
 $("#order-btn").click(function () {
     $(".order-page").show();
@@ -25,10 +27,11 @@ $("#order-btn").click(function () {
 // });//closer for payup-btn func
 
 //**** DROPDOWNS FOR CRUST */
-function hideCrustDrops() { $(".hand").hide();
-$('.skinny').hide();
-$('.ny').hide();
-$('.gluten').hide();
+function hideCrustDrops() {
+    $(".hand").hide();
+    $('.skinny').hide();
+    $('.ny').hide();
+    $('.gluten').hide();
 }
 // $(".hand").hide();
 // $('.skinny').hide();
@@ -102,15 +105,15 @@ $('#toppings').click(function (e) {
 
     // Determine if the user is checking or unchecking a choice for toppings
     // Update the toppings array
-    console.log("This is the toppings " +e.target.checked);
-    if(e.target.checked === undefined){
+    console.log("This is the toppings " + e.target.checked);
+    if (e.target.checked === undefined) {
         console.log("Nothing")
     } else if (e.target.checked === true) {
         userPizzaSelections.push(e.target.value);
     } else {
-          
+
         let removeItem = userPizzaSelections.indexOf(e.target.value);
-      
+
         userPizzaSelections.splice(removeItem, 1);
     }
 
@@ -122,10 +125,10 @@ $('#toppings').click(function (e) {
 
 });
 
-function addTotals(){
+function addTotals() {
     let toppingCost = totalToppings * .99;
     let endPrice = crustPrice + cheesePrice + saucePrice + toppingCost;
-  $('#total').text(endPrice.toFixed(2));
+    $('#total').text(endPrice.toFixed(2));
 }
 
 
@@ -150,7 +153,7 @@ $('#cheese').change(function (e) {
     cheesePrice = Number(e.target.value);
 
     // Globally set the user sauce choice. These variables will be used at check out.
-   cheeseOption = e.target.id;
+    cheeseOption = e.target.id;
     cheeseChoice = e.target.selectedIndex;
     addTotals()
 });
@@ -158,7 +161,7 @@ $('#cheese').change(function (e) {
 
 // Listen for user input on the radio buttons
 const radioButtonArr = ['customRadio1', 'customRadio2', 'customRadio3', 'customRadio4'];
-const dropDownArr  = ['hand0', 'skinny0', 'ny0', 'gluten0'];
+const dropDownArr = ['hand0', 'skinny0', 'ny0', 'gluten0'];
 let crustPrice = 0.00;
 
 $(':radio').click(function (e) {
@@ -172,7 +175,7 @@ $(':radio').click(function (e) {
 function unHideCrust(radioId) {
 
     // Set all options to hide
-   hideCrustDrops();
+    hideCrustDrops();
 
     // Turn radioId into a number
     let user_selected_radio = radioButtonArr.indexOf(radioId);
@@ -184,7 +187,7 @@ function unHideCrust(radioId) {
 
 // Set the global cost for crust
 $('.sizeprice').change(function (e) {
-console.log("in size price "+e.target.id)
+    console.log("in size price " + e.target.id)
     //Set the global crust price
     crustPrice = Number(e.target.value);
 
@@ -192,22 +195,22 @@ console.log("in size price "+e.target.id)
     crustOption = e.target.id;
 
     crustChoice = e.target.selectedIndex;
-    
-  // Check to see if the user selected a crust and set the check variable
-   if (crustPrice > 0) {
-       check = true;
-   } else {
-       check = false;
-   }
-  // Clear unused crust drop downs
-     clearDropDowns(e);
-     addTotals()
+
+    // Check to see if the user selected a crust and set the check variable
+    if (crustPrice > 0) {
+        check = true;
+    } else {
+        check = false;
+    }
+    // Clear unused crust drop downs
+    clearDropDowns(e);
+    addTotals()
 });
 
 ////////////// CRUST SELECTION ///////////////////
 function clearDropDowns(e) {
     let user_selected = dropDownArr.indexOf(e.target.id);
-    console.log("in clear "+user_selected);
+    console.log("in clear " + user_selected);
     // Iterate through the dropDownArr to clear unused entries
     for (let i = 0; i < dropDownArr.length; i++) {
 
@@ -399,7 +402,7 @@ function validate(field, regex) {
         $('.errorFone').text('');
     } else {
         field.className = 'form-control invalid';
-       
+
         $('.errorFone').text("10 digits only, please");
     }
 }//closing for function validate()
@@ -431,136 +434,190 @@ paythepiperInputs.forEach((input) => {
     paythepiper.reset();
 });//closer for gottafindyaInputs.forEach()
 
-    /////CLICK/SUBMIT VALIDATIONS  to be sure all fields complete
+/////CLICK/SUBMIT VALIDATIONS  to be sure all fields complete
 
-    // let getvalue = document.getElementsByTagName('input');
-    // console.log(getvalue);//every input and returns them in an HTML collection
-    // let getvalue = document.querySelector('.form-content input');
-    // console.log(getvalue);
+// let getvalue = document.getElementsByTagName('input');
+// console.log(getvalue);//every input and returns them in an HTML collection
+// let getvalue = document.querySelector('.form-content input');
+// console.log(getvalue);
 
+////SETTING DEFAULT VALUES//////
+// function defaultFunc() {
+//     let x = document.getElementsByClassName("dval");
+//     let defaultVal = x.defaultValue;
+//     let currentVal = x.value;
+    
+//     if (defaultVal == currentVal) {
+// console.log('current value used') ;   
+// } else {
+// console.log('defaultvalue used');
+//     }
+//   }
 
-    //CLICK/SUBMIT VALIDATION for DELIVERY(gottafindya) FIELDS
-    $('#payup-btn').on('click', e=> {
-        e.preventDefault();
+//CLICK/SUBMIT VALIDATION for DELIVERY(gottafindya) FIELDS
+$('#payup-btn').on('click', e => {
+    e.preventDefault();
+    // defaultFunc();
     //    console.log(e.target.name);//empty string???
     //    console.log(e.target.name.value);//undefined
 
 
-// let delivery = $('#gottafindya input[type="text"]');
-    
-//             if(!$(delivery).val()){
-//                 $(delivery).addClass("error");
-//             //   $(this).appendPa      ('<div class="error test test"></div>');
-//                 $('.del').append('<div>hey, hey invalid name! KAREN</div>');
-//             // } else if (delivery.classList.contains('invalid')){
-//             //     $('.del').append('<div>hey, hey invalid name! LAMAR</div>');  
-//             } else {
-//                 $(delivery).removeClass("error");
-//             }
-
-    
 
 
+    // let delivery = $('#gottafindya input[type="text"]');
+
+    //             if(!$(delivery).val()){
+    //                 $(delivery).addClass("error");
+    //             //   $(this).appendPa      ('<div class="error test test"></div>');
+    //                 $('.del').append('<div>hey, hey invalid name! KAREN</div>');
+    //             // } else if (delivery.classList.contains('invalid')){
+    //             //     $('.del').append('<div>hey, hey invalid name! LAMAR</div>');  
+    //             } else {
+    //                 $(delivery).removeClass("error");
+    //             }
 
 
 
 
-// if (name.classList.contains('invalid')) { 
-//         console.log("Name Invalid")
-//          $('.delname').append('<div class="error"></div>');
-//             $('.error').text('hey, hey invalid name! KAREN');
-// } if (name.classList.contains('invalid')) { 
-//     console.log("Name Invalid")
-//      $('.delname').append('<div class="error"></div>');
-//         $('.error').text('hey, hey invalid name! KAREN');
+    $('.error').remove();
 
 
-        if ((name.classList.contains('invalid') || name.value == '')) { 
-            // if (name.classList.contains('invalid')){
-            //  let input = e.target.classList;
+
+    // if (name.classList.contains('invalid')) { 
+    //         console.log("Name Invalid")
+    //          $('.delname').append('<div class="error"></div>');
+    //             $('.error').text('hey, hey invalid name! KAREN');
+    // } if (name.classList.contains('invalid')) { 
+    //     console.log("Name Invalid")
+    //      $('.delname').append('<div class="error"></div>');
+    //         $('.error').text('hey, hey invalid name! KAREN');
+
+
+    if ((name.classList.contains('invalid') || name.value == '')) {
+        // if (name.classList.contains('invalid')){
+        //  let input = e.target.classList;
         // console.log(input);
         // console.log(e.target.name.classLIst);
-            console.log('fill in name');
-            $('.delname').append('<div id="test">hey, hey invalid name! KAREN</div>');
-        }
-            // $('.delname').append('<div class="error"></div>');
-            // $('.error').text('hey, hey invalid name! KAREN');
-            // } else if (name.value == '') {
-            //     $('.delname').append('<div class="error"></div>');
-            //     $('.error').text('hey, hey forgot a field!   LAMAR');
-            // } else {
-            // $('.delname').append('<div> </div>');
+        // $('#test').remove();
+console.log(name.value);
+        console.log('fill in name');
+        $('.delname').append('<div class="error">hey, hey what\'s your name?</div>');
+    }
+    // $('.delname').append('<div class="error"></div>');
+    // $('.error').text('hey, hey invalid name! KAREN');
+    // } else if (name.value == '') {
+    //     $('.delname').append('<div class="error"></div>');
+    //     $('.error').text('hey, hey forgot a field!   LAMAR');
+    // } else {
+    // $('.delname').append('<div> </div>');
 
-                // $('.delname').append('<div class="error"></div>');
-                // $('.error').text('BLANK');
-            // }
-            // return false;
-            
-         if  ((address.classList.contains('invalid') ||address.value == '')){
-            console.log('fill in address');
-            $('.deladd').append('<div class="error"></div>');
-            $('.error').text('hey, hey forgot a field!');
-            return false;
-         }else {
-            $('.error').remove();////do this for all of them!!!
-         }
+    // $('.delname').append('<div class="error"></div>');
+    // $('.error').text('BLANK');
+    // }
+    // return false;
 
-        if ((city.classList.contains('invalid') || city.value == '')) {
+    if ((address.classList.contains('invalid') || address.value.trim() == '')) {
+        console.log('fill in address');
+
+        $('.deladd').append('<div class="error">hey, hey need need your address! Gotta find ya, ya know!!</div>');
+        // return false;
+    }
+    //  else if ((city.classList.contains('valid') || city.value !== '')){
+    //     $('.error').remove();////do this for all of them!!!
+    //  }
+
+    if ((city.classList.contains('invalid') || city.value == '')) {
         console.log('fill in city');
-        $('.delcity').append('<div class="error"></div>');
-        $('.error').text('hey, hey forgot a field!');
-        return false;
+        $('.delcity').append('<div class="error">hey, hey forgot the city! </div>');
+        ////CANNOT WRITE APPEND LIKE THIS UNLESS WHAT ALL FIELD TO REPEAT THE SAME:
+        // $('.delcity').append('<div class="error"></div>');
+        // $('.error').text('hey, hey forgot the city!');
 
-    } if ((state.classList.contains('invalid') || state.value == '')) {
-    console.log('fill in state');
-    $('.delstate').append('<div class="error"></div>');
-    $('.error').text('hey, hey forgot a field!');
-    return false;
+    }
+    // return false;
+    // }else if ((city.classList.contains('valid') || city.value !== '')) {
+    //     $('.error2').remove();////do this for all of them!!!
+    //  }
 
-} if ((zip.classList.contains('invalid') || zip.value == '')){
-console.log('fill in form');
-$('.delzip').append('<div class="error"></div>');
-$('.error').text('hey, hey forgot a field!');
-return false;
 
-} if ((email.classList.contains('invalid') || email.value == '')) {
-console.log('fill in email');
-$('.delem').append('<div class="error"></div>');
-$('.error').text('hey, hey forgot a field!');
-return false;
+    if ((state.classList.contains('invalid') || state.value == '')) {
+        console.log('fill in state');
+        $('.delstate').append('<div class="error">hey, hey your state? (not mental state haha!</div>');
+        // return false;
+        // }else if {
+        //     $('.error').remove();////do this for all of them!!!
+    }
 
-} if ((fone.classList.contains('invalid') || fone.value == '')) {
-console.log('fill in fone');
-$('.delfone').append('<div class="error"></div>');
-$('.error').text('hey, hey forgot a field!');
-return false;
 
-        } else {
-            console.log('go to next screen');
-            // $('div').remove('.deladd');
-            // $('#test').hide();
-//             $('.getmypizza').hide();
-//             $('.creditcard-page').show();
-//             $('.total').show();//should show 
-//             $('.circle3').show();
-//             return true;
-        }
-//         // gottafindya.reset();
-    });
+    if ((zip.classList.contains('invalid') || zip.value == '')) {
+        console.log('fill in form');
+        $('.delzip').append('<div class="error">hey, hey zip, zip, zippety do dah!</div>');
+        // return false;
+        // }else if {
+        //     $('.error').remove();////do this for all of them!!!
+    }
 
-    
+
+    if ((email.classList.contains('invalid') || email.value == '')) {
+        console.log('fill in email');
+        // $('.delem').append('<div class="error"></div>');
+        // $('.error').text('hey, hey forgot a field!');
+        $('.delem').append('<div class="error">hey, hey can we get your email?</div>');
+
+        // return false;
+        // }else if {
+        //     $('.error').remove();////do this for all of them!!!
+    }
+
+
+    if ((fone.classList.contains('invalid') || fone.value == '')) {
+        console.log('fill in fone');
+        // $('.delfone').append('<div class="error"></div>');
+        // $('.error').text('hey, hey forgot a field!');
+        $('.delfone').append('<div class="error">hey, hey what about your number?</div>');
+
+        // return false;
+        // }else if {
+        //     $('.error').remove();////do this for all of them!!!
+    }
+
+
+    else {
+        console.log('go to next screen');
+        // $('div').remove('.deladd');
+        // $('#test').hide();
+        $('.getmypizza').hide();
+        $('.creditcard-page').show();
+        $('.total').show();//should show 
+        $('.circle3').show();
+        // return true;
+    }
+    //         // gottafindya.reset();
+});
+
+
 
 
 /////////DUPLICATE DELIVERY ADDRESS to BILLING when checked
 
 $('#dup').click(function () {
     "use strict";
-    $('#whosbuying2').val($('#whosbuying').val());
-    $('#address2').val($('#address').val());
-    $('#apt-ste-num2').val($('#apt-ste-num').val());
-    $('#city2').val($('#city').val());
-    $('#state2').val($('#state').val());
-    $('#zip2').val($('#zip').val());
+    if ($('#dup').prop('checked') === true) {
+        // $('#whosbuying2').val($('#whosbuying').val());
+        $('#address2').val($('#address').val());
+        $('#apt-ste-num2').val($('#apt-ste-num').val());
+        $('#city2').val($('#city').val());
+        $('#state2').val($('#state').val());
+        $('#zip2').val($('#zip').val());
+    } else {
+        // $('#whosbuying2').val('');
+        $('#address2').val('');
+        $('#apt-ste-num2').val('');
+        $('#city2').val('');
+        $('#state2').val('');
+        $('#zip2').val('');
+    }
+
 });
 // });//closing document ready
 
@@ -585,6 +642,8 @@ let yr = 2020;
 function checkDate() {
     if (mo < todaymonth && yr == todayyear) {
         console.log('expired');
+        $('.delmo').append('<div class="error">hey, hey card expired!</div>');
+        $('.delyr').append('<div class="error">hey, hey card expired!</div>');
     } else {
         console.log('cool');
     }
@@ -608,48 +667,49 @@ $('#ex-year').click(e => {
 
 ////SUBMIT EVENT LISTENER FOR FINAL ORDER & VALIDATION////
 
-$('#paythepiper-btn').on('submit', e=> {
-        e.preventDefault();
-console.log('clickkkkk');
-        if ((name2.classList.contains('invalid') || name2.value == '')) { 
-            console.log('fill in name2');
-            $('.delname2').append('<div class="error"></div>');
-            $('.error').text('hey, hey forgot a field!');
-            return false;
-            
-        } else if  ((address2.classList.contains('invalid') ||address2.value == '')){
-            console.log('fill in address2');
-            $('.deladd2').append('<div class="error"></div>');
-            $('.error').text('hey, hey forgot a field!');
-            return false;
+$('#paythepiper-btn').on('click', e => {
+    e.preventDefault();
+    $('.error').remove();//clear form
+    checkDate();
 
-        } if ((city2.classList.contains('invalid') || city2.value == '')) {
+    console.log('clickkkkk');
+
+    if((ccn.classList.contains('invalid') || ccn.value == '')) {
+        console.log('fill in name="ccn"');
+        $('.delccn').append('<div class="error">hey, hey check the number!</div>');
+    }
+    if((cvv.classList.contains('invalid') || cvv.value == '')) {
+        console.log('fill in name="cvv"');
+        $('.delcvv').append('<div class="error">hey, hey need the code!</div>');
+    }
+
+
+
+    if ((name2.classList.contains('invalid') || name2.value == '')) {//where pulling from ??  cannot be form...
+        console.log('fill in name2');
+        $('.delname2').append('<div class="error">hey, hey invalid name!</div>');
+
+    } if ((address2.classList.contains('invalid') || address2.value.trim() == '')) {
+        console.log('fill in address2');
+        $('.deladd2').append('<div class="error">hey, hey need need your address! Gotta find ya, ya know!!</div>');
+
+    } if ((city2.classList.contains('invalid') || city2.value == '')) {
         console.log('fill in city2');
-        $('.delcity2').append('<div class="error"></div>');
-        $('.error').text('hey, hey forgot a field!');
-        return false;
+        $('.delcity2').append('<div class="error">hey, hey forgot the city!</div>');
 
     } if ((state2.classList.contains('invalid') || state2.value == '')) {
-    console.log('fill in state2');
-    $('.delstate2').append('<div class="error"></div>');
-    $('.error').text('hey, hey forgot a field!');
-    return false;
+        console.log('fill in state2');
+        $('.delstate2').append('<div class="error">hey, hey your state? (not mental state haha!</div>');
 
-} if ((zip2.classList.contains('invalid') || zip2.value == '')){
-console.log('fill in zip2');
-$('.delzip').append('<div class="error"></div>');
-$('.error').text('hey, hey forgot a field!');
-return false;
+    } if ((zip2.classList.contains('invalid') || zip2.value == '')) {
+        console.log('fill in zip2');
+        $('.delzip2').append('<div class="error">hey, hey zip, zip, zippety do dah!</div>');
 
-        } else {
-            console.log('go to next screen2');
-            // $('.getmypizza').hide();
-            // $('.creditcard-page').show();
-            // $('.total').show();//should show 
-            // $('.circle3').show();
-            return true;
-        }
-    });
+    } else {
+        console.log('go to next screen2');
+        $('#complete_form').show();
+    }
+});
 // Run the program
 
 window.addEventListener('load', () => {
@@ -698,7 +758,7 @@ window.addEventListener('load', () => {
 
 
 
-    
+
     // btn.addEventListener('focus', e => {
     //     e.preventDefault();
     //     const addName = addInput.querySelector('input[name="name"]').value.trim();
