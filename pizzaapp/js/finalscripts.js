@@ -259,22 +259,21 @@ let zip2 = document.getElementById('zip2');
 let payup = document.getElementById('payup-btn');
 
 //GOTTAFINDYA VALIDATION with REGEX
-let gottafindya = document.forms.gottafindya;
-console.log(gottafindya);
+let gottafindya = document.forms.gottafindya;//grabs the delivery input
 
-let streetcred = document.forms.streetcred;
-console.log(streetcred);
+let streetcred = document.forms.streetcred;//grabs the billing form NOT nameoncard
 
-let paythepiper = document.forms.paythepiper;
-console.log(paythepiper);
+let paythepiper = document.forms.paythepiper;//grabs cc form NOT month and year
 
-//grabs all input tags within #gottafindya
-let gottafindyaInputs = document.querySelectorAll('#gottafindya input:not(.notincl)');
-console.log(gottafindyaInputs);
+let nameoncard = document.forms.nameoncard;//grabs nameoncard form
+
+
+
+let gottafindyaInputs = document.querySelectorAll('#gottafindya input:not(.notincl)');//grabs all input tags within #gottafindya  except those with .notincl
 let streetcredInputs = document.querySelectorAll('#streetcred input:not(.notincl)');
-console.log(streetcredInputs);
 let paythepiperInputs = document.querySelectorAll('#paythepiper input');
-console.log(paythepiperInputs);
+let nameoncardInput = document.querySelectorAll('#nameoncard input');
+
 
 //REGEX patterns for each input field:
 let patterns = {
@@ -292,7 +291,6 @@ let patterns = {
 
 //VALIDATION of add, billing, cc FUNCTION
 function validate(field, regex) {
-    console.log(regex.test(field.value));
     if (regex.test(field.value)) {
         field.className = 'form-control valid';
         $('.errorFone').text('');
@@ -305,7 +303,6 @@ function validate(field, regex) {
 //EVENT LISTENER FOR DELIVERY FORM VALIDATION
 gottafindyaInputs.forEach((input) => {
     input.addEventListener('keyup', e => {
-        console.log(e.target.attributes.name.value);
         validate(e.target, patterns[e.target.attributes.name.value]);
     });//closer for input.addEventListener-keyup
     gottafindya.reset();
@@ -314,7 +311,6 @@ gottafindyaInputs.forEach((input) => {
 //EVENT LISTENER FOR BILLING FORM VALIDATION
 streetcredInputs.forEach((input) => {
     input.addEventListener('keyup', e => {
-        console.log(e.target.attributes.name.value);
         validate(e.target, patterns[e.target.attributes.name.value]);
     });//closer for input.addEventListener-keyup
     streetcred.reset();
@@ -323,12 +319,17 @@ streetcredInputs.forEach((input) => {
 //EVENT LISTENER FOR CREDIT CARD FORM VALIDATION
 paythepiperInputs.forEach((input) => {
     input.addEventListener('keyup', e => {
-        console.log(e.target.attributes.name.value);
         validate(e.target, patterns[e.target.attributes.name.value]);
     });//closer for input.addEventListener-keyup
     paythepiper.reset();
 });//closer for gottafindyaInputs.forEach()
 
+nameoncardInput.forEach((input) => {
+    input.addEventListener('keyup', e => {
+        validate(e.target, patterns[e.target.attributes.name.value]);
+    });//closer for input.addEventListener-keyup
+    nameoncard.reset();
+});//closer for gottafindyaInputs.forEach()
 
 //CLICK/SUBMIT VALIDATION for DELIVERY(gottafindya) FIELDS
 $('#payup-btn').on('click', e => {
@@ -337,43 +338,34 @@ $('#payup-btn').on('click', e => {
     $('.error').remove();//clears form
 
     if ((name.classList.contains('invalid') || name.value == '')) {
-console.log(name.value);
-        console.log('fill in name');
         $('.delname').append('<div class="error">hey, hey what\'s your name?</div>');
     }
 
     if ((address.classList.contains('invalid') || address.value.trim() == '')) {
-
         $('.deladd').append('<div class="error">hey, hey need need your address! Gotta find ya, ya know!!</div>');
     }
 
     if ((city.classList.contains('invalid') || city.value == '')) {
-        console.log('fill in city');
         $('.delcity').append('<div class="error">hey, hey forgot the city! </div>');
     }
 
     if ((state.classList.contains('invalid') || state.value == '')) {
-        console.log('fill in state');
         $('.delstate').append('<div class="error">hey, hey your state? (not mental state haha!</div>');
     }
 
     if ((zip.classList.contains('invalid') || zip.value == '')) {
-        console.log('fill in form');
         $('.delzip').append('<div class="error">hey, hey zip, zip, zippety do dah!</div>');
     }
 
     if ((email.classList.contains('invalid') || email.value == '')) {
-        console.log('fill in email');
         $('.delem').append('<div class="error">hey, hey can we get your email?</div>');
     }
 
     if ((fone.classList.contains('invalid') || fone.value == '')) {
-        console.log('fill in fone');
         $('.delfone').append('<div class="error">hey, hey what about your number?</div>');
     }
 
     else {
-        console.log('go to next screen');
         $('.getmypizza').hide();
         $('.creditcard-page').show();
         $('.total').show();
@@ -392,6 +384,7 @@ $('#dup').click(function () {
         $('#state2').val($('#state').val());
         $('#zip2').val($('#zip').val());
     } else {
+        $('#whosbuying2').val('');
         $('#address2').val('');
         $('#apt-ste-num2').val('');
         $('#city2').val('');
@@ -414,7 +407,6 @@ let yr = 2020;
 
 function checkDate() {
     if (mo < todaymonth && yr == todayyear) {
-        console.log('expired');
         $('.delmo').append('<div class="error">hey, hey card expired!</div>');
         $('.delyr').append('<div class="error">hey, hey card expired!</div>');
     } else {
@@ -441,41 +433,40 @@ $('#ex-year').click(e => {
 ////SUBMIT EVENT LISTENER FOR FINAL ORDER & VALIDATION////
 $('#paythepiper-btn').on('click', e => {
     e.preventDefault();
+
     $('.error').remove();//clear form
 
     checkDate();//add check for exp date
 
     //validate fields for billing
     if((ccn.classList.contains('invalid') || ccn.value == '')) {
-        console.log('fill in name="ccn"');
         $('.delccn').append('<div class="error">hey, hey check the number!</div>');
     }
+
     if((cvv.classList.contains('invalid') || cvv.value == '')) {
-        console.log('fill in name="cvv"');
         $('.delcvv').append('<div class="error">hey, hey need the code!</div>');
     }
+    
     if ((name2.classList.contains('invalid') || name2.value == '')) {//where pulling from ??  cannot be form...
-        console.log('fill in name2');
         $('.delname2').append('<div class="error">hey, hey invalid name!</div>');
+    }
 
-    } if ((address2.classList.contains('invalid') || address2.value.trim() == '')) {
-        console.log('fill in address2');
+     if ((address2.classList.contains('invalid') || address2.value.trim() == '')) {
         $('.deladd2').append('<div class="error">hey, hey need need your address! Gotta find ya, ya know!!</div>');
 
-    } if ((city2.classList.contains('invalid') || city2.value == '')) {
-        console.log('fill in city2');
+    } 
+    if ((city2.classList.contains('invalid') || city2.value == '')) {
         $('.delcity2').append('<div class="error">hey, hey forgot the city!</div>');
 
-    } if ((state2.classList.contains('invalid') || state2.value == '')) {
-        console.log('fill in state2');
+    } 
+    if ((state2.classList.contains('invalid') || state2.value == '')) {
         $('.delstate2').append('<div class="error">hey, hey your state? (not mental state haha!</div>');
 
-    } if ((zip2.classList.contains('invalid') || zip2.value == '')) {
-        console.log('fill in zip2');
+    } 
+    if ((zip2.classList.contains('invalid') || zip2.value == '')) {
         $('.delzip2').append('<div class="error">hey, hey zip, zip, zippety do dah!</div>');
 
     } else {
-        console.log('go to next screen2');
         $('#complete_form').show();
     }
 });
