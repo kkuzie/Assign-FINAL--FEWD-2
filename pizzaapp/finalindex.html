@@ -355,12 +355,15 @@
                 </form><!-- closer for #ccyear -->
             </div><!-- closer for row cvv mo yr -->
 
-            <div class="form-row"><!--1st form-row-->
+            
+                <form id="nameoncard">
+                    <div class="form-row"><!--1st form-row-->
                 <div class="form-group col-md-12 delname2">
                     <label for="name2">Name</label>
                     <input type="text" name="name" class="form-control" id="whosbuying2"
                         placeholder="Name as appears on your card">
                 </div> <!-- closer for form-group col-md-12 delname2-->
+            </form><!-- closer for #nameoncard -->
             </div> <!-- closer for .pay-page -->
             <br>
 
@@ -376,10 +379,9 @@
                         </label>
                     </div>
                 </div> <!-- closer for form-group  CHECKBOX-->
-        </div> <!--closer 1st form-row-->
+        <!-- </div> closer 1st form-row -->
 
         <div class="form-row"><!--2nd form-row-->
-
             <div class="form-group col-md-8 deladd2">
                 <label for="inputAddress2">Address</label>
                 <input type="text" name="address" class="form-control notincl" id="address2"
