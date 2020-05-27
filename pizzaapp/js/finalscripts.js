@@ -259,7 +259,7 @@ let zip2 = document.getElementById('zip2');
 let payup = document.getElementById('payup-btn');
 
 //GOTTAFINDYA VALIDATION with REGEX
-let gottafindya = document.forms.gottafindya;//grabs the delivery input
+let gottafindya = document.forms.gottafindya;//grabs the delivery form
 
 let streetcred = document.forms.streetcred;//grabs the billing form NOT nameoncard
 
@@ -364,7 +364,9 @@ $('#payup-btn').on('click', e => {
     if ((fone.classList.contains('invalid') || fone.value == '')) {
         $('.delfone').append('<div class="error">hey, hey what about your number?</div>');
     }
-
+    else if ($('.error').length > 1){
+        console.log('ciao ciao');
+    }
     else {
         $('.getmypizza').hide();
         $('.creditcard-page').show();
@@ -465,8 +467,11 @@ $('#paythepiper-btn').on('click', e => {
     } 
     if ((zip2.classList.contains('invalid') || zip2.value == '')) {
         $('.delzip2').append('<div class="error">hey, hey zip, zip, zippety do dah!</div>');
-
-    } else {
+    }
+    else if ($('.error').length > 1){
+        console.log('ciao ciao');
+    }
+    else {
         $('#complete_form').show();
     }
 });
